@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+    <meta http-equiv="Access-Control-Allow-Origin" content="* https://raw.githubusercontent.com/jmmontanana/*"/>
     <meta charset="utf-8">
     <title>Organization Chart Plugin</title>
     <link rel="icon" href="img/logo.png">
@@ -621,31 +621,44 @@
                 nodes: [{
                     id: 1,
                     parentId: null,
-                    name: "Maria Amparo Aliaga Urios"
+                    pids: [101],
+                    name: "Maria Amparo",
+                    apellidos:"Aliaga Urios"
+                }, {
+                    id: 101,
+                    parentId: null,
+                    pids: [1],
+                    tags: ["green"],
+                    name: "José Miguel",
+                    apellidos:"Montañana Vicedo"
                 }, {
                     id: 2,
                     parentId: 1,
                     mid: 1,
                     tags: ["green"],
-                    name: "Raul Montañana"
+                    name: "Raul Jesus",
+                    apellidos:"Montañana Aliaga"
                 }, {
                     id: 3,
                     parentId: 1,
                     mid: 1,
                     tags: ["yellow"],
                     pids: [5],
-                    name: "Jose Migyel"
+                    name: "José Miguel",
+                    apellidos:"Montañana Aliaga"
                 }, {
                     id: 4,
                     parentId: null,
                     tags: ["green"],
-                    name: "Abuela"
+                    name: "Abuela",
+                    apellidos:"xxx"
                 }, {
                     id: 5,
                     parentId: 4,
                     mid: 4,
                     pids: [3],
-                    name: "Xiaoli Wu"
+                    name: "Xiaoli",
+                    apellidos:"Wu"
                 }, {
                     id: 6,
                     parentId: 4,
