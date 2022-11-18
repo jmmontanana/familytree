@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    <!-- https://htmlpreview.github.io/?https://github.com/jmmontanana/familytree/blob/main/familytree2.html -->
 <head>
     <meta http-equiv="Access-Control-Allow-Origin" content="* https://raw.githubusercontent.com/jmmontanana/*"/>
     <meta charset="utf-8">
@@ -107,27 +107,26 @@
 
     <script type="text/javascript" src="js/familytree.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.orgchart.js"></script>
+    <!-- <script type="text/javascript" src="js/jquery.orgchart.js"></script> -->
 
-    <script type="text/javascript" async="" src="js/OrgChartJS2.js"></script>
-    <script type="text/javascript" async="" src="js/OrgChartJS21.js"></script>
-    <script>
+    <!-- <script type="text/javascript" async="" src="js/OrgChartJS2.js"></script>
+    <script type="text/javascript" async="" src="js/OrgChartJS21.js"></script>  -->
+    <!-- <script>
         window.dataLayer = window.dataLayer || [];
-
         function gtag() {
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
-
         gtag('config', 'UA-127890191-1');
-    </script>
-    <script src="js/orgchart.js"></script>
+    </script> -->
+    <!-- <script src="js/orgchart.js"></script> -->
 </head>
 
 <body>
-    <div id="chart-container"></div>
-    <!-- https://balkan.app/FamilyTreeJS/Docs/CSSCustomization -->
+    
     <div style="width:100%; height:700px;" id="tree" />
+    <!-- https://balkan.app/FamilyTreeJS/Docs/CSSCustomization -->
+
     <script>
         window.onload = function() {
             var expandAllIcon =
@@ -563,7 +562,6 @@
 
             var family = new FamilyTree(document.getElementById("tree"), {
                 template: "john",
-
                 menu: {
                     pdf: {
                         text: "Export PDF",
@@ -619,55 +617,119 @@
 
                 // Pids Mid Fid Name Gender Birth Familytree Img Tel Email Resume Isdel UpdateTime
                 nodes: [{
-                    id: 1,
-                    parentId: null,
-                    pids: [101],
+                    id: 511, 
+                    parentId : null,
+                    pids: [512],
+                    name: "Salvador",
+                    apellidos:"Montañana"
+                }, {
+                    id: 512, 
+                    parentId : null,
+                    pids: [511],
+                    name: "M ",
+                    apellidos:"Vicedo Vicedo"
+                }, { 
+                    id: 401, 
+                    pids: [406],
                     name: "Maria Amparo",
                     apellidos:"Aliaga Urios"
                 }, {
-                    id: 101,
-                    parentId: null,
-                    pids: [1],
+                    id: 403, 
+                    mid: 511,
+                    fid: 512, 
+                    tags: ["green"],
+                    name: "Salvador",
+                    apellidos:"Montañana Vicedo"  
+                }, {
+                    id: 404, 
+                    mid: 511,
+                    fid: 512, 
+                    tags: ["green"],
+                    name: "Paco",
+                    apellidos:"Montañana Vicedo"  
+                }, {
+                    id: 405, 
+                    mid: 511,
+                    fid: 512, 
+                    pids: [1405],
+                    tags: ["green"],
+                    name: "Maruja",
+                    apellidos:"Montañana Vicedo"  
+                }, {
+                    id: 1405, 
+                    pids: [405],
+                    tags: ["green"],
+                    name: "Luis",
+                    apellidos:"xxx"  
+                }, {
+                    id: 406, 
+                    mid: 511,
+                    fid: 512,
+                    pids: [401],
                     tags: ["green"],
                     name: "José Miguel",
-                    apellidos:"Montañana Vicedo"
+                    apellidos:"Montañana Vicedo"  
                 }, {
-                    id: 2,
-                    parentId: 1,
-                    mid: 1,
+                    id: 301,
+                    mid: 406,
+                    fid: 401,
+                    tags: ["yellow"],
+                    pids: [305],
+                    name: "José Miguel",
+                    apellidos:"Montañana Aliaga"
+                }, {
+                    id: 302,
+                    mid: 406,
+                    fid: 401,
                     tags: ["green"],
                     name: "Raul Jesus",
                     apellidos:"Montañana Aliaga"
                 }, {
-                    id: 3,
-                    parentId: 1,
-                    mid: 1,
-                    tags: ["yellow"],
-                    pids: [5],
-                    name: "José Miguel",
+                    id: 303,
+                    mid: 406,
+                    fid: 401,
+                    tags: ["green"],
+                    name: "Carolina Maria Amparo",
                     apellidos:"Montañana Aliaga"
                 }, {
-                    id: 4,
-                    parentId: null,
+                    id: 304,
+                    mid: 406,
+                    fid: 401,
+                    tags: ["green"],
+                    name: "Maria Elena",
+                    apellidos:"Montañana Aliaga"
+
+                }, {
+                    id: 485, 
+                    parentId : null,
+                    pids: [486],
                     tags: ["green"],
                     name: "Abuela",
-                    apellidos:"xxx"
+                    apellidos:"Wu"
                 }, {
-                    id: 5,
-                    parentId: 4,
-                    mid: 4,
-                    pids: [3],
+                    id: 486, 
+                    parentId : null,
+                    pids: [485],
+                    tags: ["green"],
+                    name: "Abuelo",
+                    apellidos:"Wu"
+                }, {
+                    id: 305,
+                    mid: 485,
+                    fid: 486,
+                    pids: [301],
                     name: "Xiaoli",
                     apellidos:"Wu"
                 }, {
-                    id: 6,
-                    parentId: 4,
-                    mid: 4,
-                    name: "Tio"
+                    id: 306,
+                    mid: 485,
+                    fid: 486,
+                    name: "Tio",
+                    apellidos:"Wu"
                 }, {
-                    id: 7,
-                    mid: 3,
-                    fid: 5,
+                    id: 200,
+                    mid: 301,
+                    fid: 305,
                     name: "Selina",
                     apellidos:"Montañana Wu"
 
@@ -724,11 +786,11 @@
                 family.importCSV();
             }
 
-            FamilyTree.pdfPrevUI.show(family, {
-                format: "A4",
-                header: 'My Header',
-                footer: 'My Footer. Page {current-page} of {total-pages}'
-            });
+            // FamilyTree.pdfPrevUI.show(family, {
+            //     format: "A4",
+            //     header: 'My Header',
+            //     footer: 'My Footer. Page {current-page} of {total-pages}'
+            // });
 
 
             // family.on('field', function(sender, args) {
@@ -758,7 +820,8 @@
 
 
 
-    <script type="text/javascript">
+    <!-- <div id="chart-container"></div>         
+        <script type="text/javascript">
         $(function() {
             var datascource = {
                 'id': '1',
@@ -838,7 +901,7 @@
                 }
             });
         });
-    </script>
+    </script> -->
 </body>
 
 </html>

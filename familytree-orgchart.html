@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Access-Control-Allow-Origin" content="* https://raw.githubusercontent.com/jmmontanana/*"/>
+    <meta charset="utf-8">
+    <title>Organization Chart Plugin</title>
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="css/jquery.orgchart.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style type="text/css">
+        .orgchart .second-menu-icon {
+            transition: opacity .5s;
+            opacity: 0;
+            right: -5px;
+            top: -5px;
+            z-index: 2;
+            position: absolute;
+        }
+        
+        .orgchart .second-menu-icon::before {
+            background-color: rgba(68, 157, 68, 0.5);
+        }
+        
+        .orgchart .second-menu-icon:hover::before {
+            background-color: #449d44;
+        }
+        
+        .orgchart .node:hover .second-menu-icon {
+            opacity: 1;
+        }
+        
+        .orgchart .node .second-menu {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: -70px;
+            border-radius: 35px;
+            box-shadow: 0 0 10px 1px #999;
+            background-color: #fff;
+            z-index: 1;
+        }
+        
+        .orgchart .node .second-menu .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            float: left;
+            margin: 5px;
+        }
+        
+        .orgchart {
+            background: #fff;
+        }
+        
+        .orgchart td.left,
+        .orgchart td.right,
+        .orgchart td.top {
+            border-color: #aaa;
+        }
+        
+        .orgchart td>.down {
+            background-color: #aaa;
+        }
+        
+        .orgchart .middle-level .title {
+            background-color: #006699;
+        }
+        
+        .orgchart .middle-level .content {
+            border-color: #006699;
+        }
+        
+        .orgchart .product-dept .title {
+            background-color: #009933;
+        }
+        
+        .orgchart .product-dept .content {
+            border-color: #009933;
+        }
+        
+        .orgchart .rd-dept .title {
+            background-color: #993366;
+        }
+        
+        .orgchart .rd-dept .content {
+            border-color: #993366;
+        }
+        
+        .orgchart .pipeline1 .title {
+            background-color: #996633;
+        }
+        
+        .orgchart .pipeline1 .content {
+            border-color: #996633;
+        }
+        
+        .orgchart .frontend1 .title {
+            background-color: #cc0066;
+        }
+        
+        .orgchart .frontend1 .content {
+            border-color: #cc0066;
+        }
+    </style>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.orgchart.js"></script>
+</head>
+
+<body>
+    <div id="chart-container"></div>  
+    <script type="text/javascript">
+        $(function() {
+            var datascource = {
+                'id': '1',
+                    'name': 'Alberto Aliaga Zanón',
+                    'title': 'Bis-Abuelo',      
+                'children': [{
+                    'id': '2',
+                    'name': 'Maria Isabel Aliaga Urios',
+                    'title': 'Tia abuela',
+                    'className': 'middle-level',
+                    'children': [{
+                        'id': '3',
+                        'name': 'Arancha',
+                        'title': 'Prima',
+                        'className': 'product-dept'
+                    }, {
+                        'id': '4',
+                        'name': 'Eduardo',
+                        'title': 'Primo',
+                        'className': 'product-dept',
+                        'children': [{
+                            'id': '5',
+                            'name': '111',
+                            'title': '1234',
+                            'className': 'pipeline1'
+                        }, {
+                            'id': '6',
+                            'name': '222',
+                            'title': '1234',
+                            'className': 'pipeline1'
+                        }, {
+                            'id': '7',
+                            'name': '333',
+                            'title': '1234',
+                            'className': 'pipeline1'
+                        }]
+                    }]
+                }, {
+                    'id': '8',
+                    'name': 'Maria Amparo Aliaga Urios',
+                    'title': 'Abuela',
+                    'className': 'middle-level',
+                    'children': [{
+                        'id': '9',
+                        'name': 'Raul Montañana Aliaga',
+                        'title': 'Tio',
+                        'className': 'rd-dept'
+                    }, {
+                        'id': '10',
+                        'name': 'Jose Miguel Montañana Aliaga',
+                        'title': 'Padre',
+                        'className': 'rd-dept',
+                        'children': [{
+                            'id': '11',
+                            'name': 'Selina Montañana',
+                            'title': '***',
+                            'className': 'frontend1'
+                        }]
+                    }]
+                }]
+            };
+
+            $('#chart-container').orgchart({
+                'data': datascource,
+                // 'visibleLevel': 2,
+                'nodeContent': 'title',
+                'nodeID': 'id',
+                'createNode': function($node, data) {
+                    var secondMenuIcon = $('<i>', {
+                        'class': 'oci oci-info-circle second-menu-icon',
+                        click: function() {
+                            $(this).siblings('.second-menu').toggle();
+                        }
+                    });
+                    var secondMenu = '<div class="second-menu"><img class="avatar" src="img/avatar/' + data.id + '.jpg"></div>';
+                    $node.append(secondMenuIcon).append(secondMenu);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
