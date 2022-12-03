@@ -115,8 +115,7 @@ FamilyTree._defaultConfig = function (e) {
         nodeContextMenuUI: null,
         toolbarUI: null,
         notifierUI: null,
-        menuUI: null,
-        exportUrl: "https://balkan.app/export",
+        menuUI: null, 
         collapse: {},
         expand: {},
         align: FamilyTree.CENTER,
@@ -843,7 +842,8 @@ FamilyTree._defaultConfig = function (e) {
 }, FamilyTree.prototype._attachEventHandlers = function (e) {
     if (this.config.interactive) {
         e = this.getSvg();
-        this.config.enableTouch || FamilyTree.isMobile() ? (this._addEvent(e, "touchstart", this._globalMouseDownHandler), this._addEvent(e, "touchend", this._globalClickHandler)) : (this._addEvent(e, "mousedown", this._globalMouseDownHandler), this._addEvent(e, "click", this._globalClickHandler), this._addEvent(e, "contextmenu", this._globalContextHandler), this._addEvent(e, "dblclick", this._globalDbClickHandler), this.config.mouseScrool != FamilyTree.action.zoom && this.config.mouseScrool != FamilyTree.action.ctrlZoom || (this._addEvent(e, "DOMMouseScroll", this._mouseScrollHandler), this._addEvent(e, "mousewheel", this._mouseScrollHandler)));
+        this.config.enableTouch || FamilyTree.isMobile() ? (this._addEvent(e, "touchstart", this._globalMouseDownHandler), this._addEvent(e, "touchend", this._globalClickHandler)) : (this._addEvent(e, "mousedown", this._globalMouseDownHandler), 
+        this._addEvent(e, "click", this._globalClickHandler), this._addEvent(e, "contextmenu", this._globalContextHandler), this._addEvent(e, "dblclick", this._globalDbClickHandler), this.config.mouseScrool != FamilyTree.action.zoom && this.config.mouseScrool != FamilyTree.action.ctrlZoom || (this._addEvent(e, "DOMMouseScroll", this._mouseScrollHandler), this._addEvent(e, "mousewheel", this._mouseScrollHandler)));
         var t = this.getMenuButton();
         t && this._addEvent(t, "click", this._menuClickHandler)
     }
@@ -867,10 +867,70 @@ FamilyTree._defaultConfig = function (e) {
         var i = e.getListenerList[t];
         e.removeEventListener(t, i, !1), delete e.getListenerList[t]
     }
-}, void 0 === FamilyTree && (FamilyTree = {}), FamilyTree.VERSION = "8.08.06", FamilyTree.orientation = {}, FamilyTree.orientation.top = 0, FamilyTree.orientation.bottom = 1, FamilyTree.orientation.right = 2, FamilyTree.orientation.left = 3, FamilyTree.orientation.top_left = 4, FamilyTree.orientation.bottom_left = 5, FamilyTree.orientation.right_top = 6, FamilyTree.orientation.left_top = 7, FamilyTree.align = {}, FamilyTree.align.center = FamilyTree.CENTER = 8, FamilyTree.align.orientation = FamilyTree.ORIENTATION = 9, FamilyTree.attr = {}, FamilyTree.attr.l = "data-l", FamilyTree.attr.id = "data-id", FamilyTree.attr.sl = "data-sl", FamilyTree.attr.lbl = "data-lbl", FamilyTree.attr.val = "data-val", FamilyTree.attr.tlbr = "data-tlbr", FamilyTree.attr.item = "data-item", FamilyTree.attr.layout = "data-layout", FamilyTree.attr.node_id = "data-n-id", FamilyTree.attr.link_id = "data-l-id", FamilyTree.attr.field_name = "data-f-name", FamilyTree.attr.c_link_to = "data-c-l-to", FamilyTree.attr.c_link_from = "data-c-l-from", FamilyTree.attr.s_link_to = "data-s-l-to", FamilyTree.attr.s_link_from = "data-s-l-from", FamilyTree.attr.control_add = "data-ctrl-add", FamilyTree.attr.control_expcoll_id = "data-ctrl-ec-id", FamilyTree.attr.control_up_id = "data-ctrl-up-id", FamilyTree.attr.control_export_menu = "data-ctrl-menu", FamilyTree.attr.control_node_menu_id = "data-ctrl-n-menu-id", FamilyTree.attr.control_node_circle_menu_id = "data-ctrl-n-c-menu-id", FamilyTree.attr.control_node_circle_menu_name = "data-ctrl-n-c-menu-name", FamilyTree.attr.control_node_circle_menu_wrraper_id = "data-ctrl-n-c-menu-wrapper-id", FamilyTree.attr.width = "data-width", FamilyTree.attr.text_overflow = "data-text-overflow", FamilyTree.ID = "id", FamilyTree.PID = "pid", FamilyTree.STPID = "stpid", FamilyTree.TAGS = "tags", FamilyTree.NODES = "nodes", FamilyTree.ELASTIC = "elastic", FamilyTree.ASSISTANT = "Assistant", FamilyTree.action = {}, FamilyTree.action.expand = 0, FamilyTree.action.collapse = 1, FamilyTree.action.maximize = 101, FamilyTree.action.minimize = 102, FamilyTree.action.expandCollapse = 501, FamilyTree.action.edit = 1, FamilyTree.action.zoom = 2, FamilyTree.action.ctrlZoom = 22, FamilyTree.action.scroll = 41, FamilyTree.action.xScroll = 3, FamilyTree.action.yScroll = 4, FamilyTree.action.none = 5, FamilyTree.action.init = 6, FamilyTree.action.update = 7, FamilyTree.action.move = 70, FamilyTree.action.pan = 8, FamilyTree.action.centerNode = 9, FamilyTree.action.resize = 10, FamilyTree.action.insert = 11, FamilyTree.action.insertfirst = 12, FamilyTree.action.details = 13, FamilyTree.action.exporting = 14, FamilyTree.none = 400001, FamilyTree.scroll = {}, FamilyTree.scroll.visible = !0, FamilyTree.scroll.smooth = 12, FamilyTree.scroll.speed = 120, FamilyTree.scroll.safari = {
+}, void 0 === FamilyTree && (FamilyTree = {}), FamilyTree.VERSION = "8.08.06", FamilyTree.orientation = {}, 
+FamilyTree.orientation.top = 0, FamilyTree.orientation.bottom = 1, FamilyTree.orientation.right = 2, FamilyTree.orientation.left = 3, FamilyTree.orientation.top_left = 4, FamilyTree.orientation.bottom_left = 5, FamilyTree.orientation.right_top = 6, FamilyTree.orientation.left_top = 7, FamilyTree.align = {}, FamilyTree.align.center = FamilyTree.CENTER = 8, 
+FamilyTree.align.orientation = FamilyTree.ORIENTATION = 9, FamilyTree.attr = {}, FamilyTree.attr.l = "data-l", 
+FamilyTree.attr.id = "data-id", FamilyTree.attr.sl = "data-sl", FamilyTree.attr.lbl = "data-lbl", 
+FamilyTree.attr.val = "data-val", FamilyTree.attr.tlbr = "data-tlbr", FamilyTree.attr.item = "data-item", 
+FamilyTree.attr.layout = "data-layout", FamilyTree.attr.node_id = "data-n-id", FamilyTree.attr.link_id = "data-l-id", 
+FamilyTree.attr.field_name = "data-f-name", 
+FamilyTree.attr.c_link_to = "data-c-l-to", FamilyTree.attr.c_link_from = "data-c-l-from", 
+FamilyTree.attr.s_link_to = "data-s-l-to", FamilyTree.attr.s_link_from = "data-s-l-from", 
+FamilyTree.attr.control_add = "data-ctrl-add", FamilyTree.attr.control_expcoll_id = "data-ctrl-ec-id", 
+FamilyTree.attr.control_up_id = "data-ctrl-up-id", FamilyTree.attr.control_export_menu = "data-ctrl-menu", 
+FamilyTree.attr.control_node_menu_id = "data-ctrl-n-menu-id", 
+FamilyTree.attr.control_node_circle_menu_id = "data-ctrl-n-c-menu-id", 
+FamilyTree.attr.control_node_circle_menu_name = "data-ctrl-n-c-menu-name", 
+FamilyTree.attr.control_node_circle_menu_wrraper_id = "data-ctrl-n-c-menu-wrapper-id", 
+FamilyTree.attr.width = "data-width", FamilyTree.attr.text_overflow = "data-text-overflow", 
+FamilyTree.ID = "id", FamilyTree.PID = "pid", FamilyTree.STPID = "stpid", FamilyTree.TAGS = "tags", 
+FamilyTree.NODES = "nodes", FamilyTree.ELASTIC = "elastic", FamilyTree.ASSISTANT = "Assistant", 
+FamilyTree.action = {}, FamilyTree.action.expand = 0, FamilyTree.action.collapse = 1, FamilyTree.action.maximize = 101, 
+FamilyTree.action.minimize = 102, FamilyTree.action.expandCollapse = 501, FamilyTree.action.edit = 1, 
+FamilyTree.action.zoom = 2, FamilyTree.action.ctrlZoom = 22, FamilyTree.action.scroll = 41, 
+FamilyTree.action.xScroll = 3, FamilyTree.action.yScroll = 4, FamilyTree.action.none = 5, FamilyTree.action.init = 6, 
+FamilyTree.action.update = 7, FamilyTree.action.move = 70, FamilyTree.action.pan = 8, FamilyTree.action.centerNode = 9,
+FamilyTree.action.resize = 10, FamilyTree.action.insert = 11, FamilyTree.action.insertfirst = 12, 
+FamilyTree.action.details = 13, 
+FamilyTree.action.exporting = 14, FamilyTree.none = 400001, 
+FamilyTree.scroll = {}, FamilyTree.scroll.visible = !0, FamilyTree.scroll.smooth = 12, 
+FamilyTree.scroll.speed = 120, FamilyTree.scroll.safari = {
     smooth: 12,
     speed: 250
-}, FamilyTree.match = {}, FamilyTree.match.height = 100001, FamilyTree.match.width = 100002, FamilyTree.match.boundary = 100003, FamilyTree.layout = {}, FamilyTree.layout.normal = FamilyTree.normal = 0, FamilyTree.layout.mixed = FamilyTree.mixed = 1, FamilyTree.layout.tree = FamilyTree.tree = 2, FamilyTree.layout.treeLeftOffset = FamilyTree.treeLeftOffset = 3, FamilyTree.layout.treeRightOffset = FamilyTree.treeRightOffset = 4, FamilyTree.nodeOpenTag = "<g " + FamilyTree.attr.node_id + '="{id}" style="opacity: {opacity}" transform="matrix(1,0,0,1,{x},{y})" class="{class}" ' + FamilyTree.attr.sl + '="{sl}" ' + FamilyTree.attr.l + "={level} {lcn}>", FamilyTree.linkOpenTag = "<g " + FamilyTree.attr.link_id + '="[{id}][{child-id}]" class="{class}">', FamilyTree.expcollOpenTag = "<g " + FamilyTree.attr.control_expcoll_id + '="{id}" transform="matrix(1,0,0,1,{x},{y})"  style="cursor:pointer;">', FamilyTree.upOpenTag = "<g " + FamilyTree.attr.control_up_id + '="{id}" transform="matrix(1,0,0,1,{x},{y})" style="cursor:pointer;">', FamilyTree.linkFieldsOpenTag = '<g transform="matrix(1,0,0,1,{x},{y}) rotate({rotate})">', FamilyTree.grCloseTag = "</g>", FamilyTree.A5w = 420, FamilyTree.A5h = 595, FamilyTree.A4w = 595, FamilyTree.A4h = 842, FamilyTree.A3w = 842, FamilyTree.A3h = 1191, FamilyTree.A2w = 1191, FamilyTree.A2h = 1684, FamilyTree.A1w = 1684, FamilyTree.A1h = 2384, FamilyTree.Letterw = 612, FamilyTree.Letterh = 791, FamilyTree.Legalw = 612, FamilyTree.Legalh = 1009, FamilyTree.COLLAPSE_PARENT_NEIGHBORS = 1, FamilyTree.COLLAPSE_SUB_CHILDRENS = 2, FamilyTree.COLLAPSE_PARENT_SUB_CHILDREN_EXCEPT_CLICKED = 3, FamilyTree.TEXT_THRESHOLD = 400, FamilyTree.IMAGES_THRESHOLD = 100, FamilyTree.LINKS_THRESHOLD = 200, FamilyTree.BUTTONS_THRESHOLD = 70, FamilyTree.ANIM_THRESHOLD = 50, FamilyTree.IT_IS_LONELY_HERE = '<g transform="translate(-100, 0)" style="cursor:pointer;"  ' + FamilyTree.attr.control_add + '="control-add"><text fill="#039be5">{link}</text></g>', FamilyTree.RES = {}, FamilyTree.RES.IT_IS_LONELY_HERE_LINK = "It's lonely here, add your first node", FamilyTree.FIRE_DRAG_NOT_CLICK_IF_MOVE = 3, FamilyTree.STRING_TAGS = !1, FamilyTree.MAX_NODES_MESS = "The trial has expired or 200 nodes limit was reached! <br /><a style='color: #039BE5;' target='_blank' href='https://balkan.app/FamilyTreeJS/Docs/Evaluation'>See more</a>", FamilyTree.OFFLINE_MESS = "The evaluation version requires internet connection! <br /><a style='color: #039BE5;' target='_blank' href='https://balkan.app/FamilyTreeJS/Docs/Evaluation'>See more</a>", FamilyTree.SEARCH_PLACEHOLDER = "Search", FamilyTree.IMPORT_MESSAGE = "Choose the columns (fields) in your data file that contain the required information.", FamilyTree.FIXED_POSITION_ON_CLICK = !1, FamilyTree.RENDER_LINKS_BEFORE_NODES = !1, FamilyTree.MIXED_LAYOUT_ALL_NODES = !0, FamilyTree.MIXED_LAYOUT_FOR_NODES_WITH_COLLAPSED_CHILDREN = !1, FamilyTree.LINK_ROUNDED_CORNERS = 5, FamilyTree.MOVE_STEP = 5, FamilyTree.MOVE_INTERVAL = 25, FamilyTree.CLINK_CURVE = 1, FamilyTree.SEARCH_RESULT_LIMIT = 10, FamilyTree.MAX_DEPTH = 200, FamilyTree.SCALE_FACTOR = 1.44, FamilyTree.LAZY_LOADING_FACTOR = 500, FamilyTree.HIDE_EDIT_FORM_ON_PAN = !0, FamilyTree.LAZY_LOADING = !0, FamilyTree.ARRAY_FIELDS = ["tags"], FamilyTree.CSV_DELIMITER = ",", FamilyTree.EDITFORM_CLOSE_BTN = '<svg data-edit-from-close class="bft-edit-form-close"><path style="fill:#ffffff;" d="M21.205,5.007c-0.429-0.444-1.143-0.444-1.587,0c-0.429,0.429-0.429,1.143,0,1.571l8.047,8.047H1.111 C0.492,14.626,0,15.118,0,15.737c0,0.619,0.492,1.127,1.111,1.127h26.554l-8.047,8.032c-0.429,0.444-0.429,1.159,0,1.587 c0.444,0.444,1.159,0.444,1.587,0l9.952-9.952c0.444-0.429,0.444-1.143,0-1.571L21.205,5.007z"></path></svg>', FamilyTree.ESCAPE_HTML = !1, FamilyTree.VERTICAL_CHILDREN_ASSISTANT = !1, "undefined" != typeof module && (module.exports = FamilyTree), FamilyTree.OC_VERSION = FamilyTree.VERSION, FamilyTree.VERSION = "1.07.09", FamilyTree.RENDER_LINKS_BEFORE_NODES = !0, FamilyTree.ARRAY_FIELDS = ["tags", "pids"], FamilyTree._intersects = function (e, t, i) {
+}, FamilyTree.match = {}, 
+FamilyTree.match.height = 100001, 
+FamilyTree.match.width = 100002, 
+FamilyTree.match.boundary = 100003, 
+FamilyTree.layout = {}, 
+FamilyTree.layout.normal = FamilyTree.normal = 0, 
+FamilyTree.layout.mixed = FamilyTree.mixed = 1, 
+FamilyTree.layout.tree = FamilyTree.tree = 2, 
+FamilyTree.layout.treeLeftOffset = FamilyTree.treeLeftOffset = 3, 
+FamilyTree.layout.treeRightOffset = FamilyTree.treeRightOffset = 4, 
+FamilyTree.nodeOpenTag = "<g " + FamilyTree.attr.node_id + '="{id}" style="opacity: {opacity}" transform="matrix(1,0,0,1,{x},{y})" class="{class}" ' + FamilyTree.attr.sl + '="{sl}" ' + FamilyTree.attr.l + "={level} {lcn}>", FamilyTree.linkOpenTag = "<g " + FamilyTree.attr.link_id + '="[{id}][{child-id}]" class="{class}">', 
+FamilyTree.expcollOpenTag = "<g " + FamilyTree.attr.control_expcoll_id + '="{id}" transform="matrix(1,0,0,1,{x},{y})"  style="cursor:pointer;">', FamilyTree.upOpenTag = "<g " + FamilyTree.attr.control_up_id + '="{id}" transform="matrix(1,0,0,1,{x},{y})" style="cursor:pointer;">', 
+FamilyTree.linkFieldsOpenTag = '<g transform="matrix(1,0,0,1,{x},{y}) rotate({rotate})">', FamilyTree.grCloseTag = "</g>", FamilyTree.A5w = 420, FamilyTree.A5h = 595, FamilyTree.A4w = 595, FamilyTree.A4h = 842, FamilyTree.A3w = 842, FamilyTree.A3h = 1191, FamilyTree.A2w = 1191, FamilyTree.A2h = 1684, FamilyTree.A1w = 1684, FamilyTree.A1h = 2384, FamilyTree.Letterw = 612, FamilyTree.Letterh = 791, 
+FamilyTree.Legalw = 612, FamilyTree.Legalh = 1009, FamilyTree.COLLAPSE_PARENT_NEIGHBORS = 1, 
+FamilyTree.COLLAPSE_SUB_CHILDRENS = 2, 
+FamilyTree.COLLAPSE_PARENT_SUB_CHILDREN_EXCEPT_CLICKED = 3, 
+FamilyTree.TEXT_THRESHOLD = 400, 
+FamilyTree.IMAGES_THRESHOLD = 100, 
+FamilyTree.LINKS_THRESHOLD = 200, FamilyTree.BUTTONS_THRESHOLD = 70, FamilyTree.ANIM_THRESHOLD = 50, 
+FamilyTree.IT_IS_LONELY_HERE = '<g transform="translate(-100, 0)" style="cursor:pointer;"  ' + FamilyTree.attr.control_add + '="control-add"><text fill="#039be5">{link}</text></g>', 
+FamilyTree.RES = {}, FamilyTree.RES.IT_IS_LONELY_HERE_LINK = "It's lonely here, add your first node", 
+FamilyTree.FIRE_DRAG_NOT_CLICK_IF_MOVE = 3, FamilyTree.STRING_TAGS = !1, 
+FamilyTree.SEARCH_PLACEHOLDER = "Search", FamilyTree.IMPORT_MESSAGE = "Choose the columns (fields) in your data file that contain the required information.", FamilyTree.FIXED_POSITION_ON_CLICK = !1, 
+FamilyTree.RENDER_LINKS_BEFORE_NODES = !1, FamilyTree.MIXED_LAYOUT_ALL_NODES = !0, FamilyTree.MIXED_LAYOUT_FOR_NODES_WITH_COLLAPSED_CHILDREN = !1, 
+FamilyTree.LINK_ROUNDED_CORNERS = 5, FamilyTree.MOVE_STEP = 5, 
+FamilyTree.MOVE_INTERVAL = 25, FamilyTree.CLINK_CURVE = 1, FamilyTree.SEARCH_RESULT_LIMIT = 10, 
+FamilyTree.MAX_DEPTH = 200, FamilyTree.SCALE_FACTOR = 1.44, FamilyTree.LAZY_LOADING_FACTOR = 500, 
+FamilyTree.HIDE_EDIT_FORM_ON_PAN = !0, FamilyTree.LAZY_LOADING = !0, FamilyTree.ARRAY_FIELDS = ["tags"], 
+FamilyTree.CSV_DELIMITER = ",", 
+FamilyTree.EDITFORM_CLOSE_BTN = '<svg data-edit-from-close class="bft-edit-form-close"><path style="fill:#ffffff;" d="M21.205,5.007c-0.429-0.444-1.143-0.444-1.587,0c-0.429,0.429-0.429,1.143,0,1.571l8.047,8.047H1.111 C0.492,14.626,0,15.118,0,15.737c0,0.619,0.492,1.127,1.111,1.127h26.554l-8.047,8.032c-0.429,0.444-0.429,1.159,0,1.587 c0.444,0.444,1.159,0.444,1.587,0l9.952-9.952c0.444-0.429,0.444-1.143,0-1.571L21.205,5.007z"></path></svg>', FamilyTree.ESCAPE_HTML = !1, 
+FamilyTree.VERTICAL_CHILDREN_ASSISTANT = !1, "undefined" != typeof module && (module.exports = FamilyTree), 
+FamilyTree.OC_VERSION = FamilyTree.VERSION, FamilyTree.VERSION = "1.07.09", 
+FamilyTree.RENDER_LINKS_BEFORE_NODES = !0, FamilyTree.ARRAY_FIELDS = ["tags", "pids"], 
+FamilyTree._intersects = function (e, t, i) {
     var r = e.x - i.siblingSeparation / 4,
         a = e.y,
         n = e.x + e.w + i.siblingSeparation / 4,
@@ -1296,7 +1356,7 @@ FamilyTree._defaultConfig = function (e) {
     return FamilyTree.events.on(e, t, this._event_id), this
 }, void 0 === FamilyTree && (FamilyTree = {}), FamilyTree.idb = {
     version: 1,
-    dbName: "BALKAN",
+    dbName: "familytree",
     tableName: "familytree-js",
     keyPath: "id"
 }, FamilyTree.idb.db = null, FamilyTree.idb._open = function (e) {
@@ -1432,31 +1492,32 @@ FamilyTree._defaultConfig = function (e) {
 }, FamilyTree.notifierUI = function () {}, FamilyTree.notifierUI.prototype.init = function (e) {
     this.obj = e
 }, FamilyTree.notifierUI.prototype.show = function (e, t) {
-    if (null == e) return !1;
-    1 == e && (e = FamilyTree.MAX_NODES_MESS, t = "#FFCA28"), 2 == e && (e = FamilyTree.OFFLINE_MESS, t = "#FFCA28");
-    var i = document.createElement("div");
-    i.innerHTML = e, Object.assign(i.style, {
-        position: "absolute",
-        "background-color": t,
-        color: "#ffffff",
-        padding: "15px",
-        "border-radius": "40px",
-        opacity: 0,
-        overflow: "hidden",
-        "white-space": "nowrap",
-        "text-align": "center"
-    }), this.obj.element.appendChild(i);
-    var r = this.obj.width() / 2 - i.offsetWidth / 2,
-        a = this.obj.height() / 2 - i.offsetHeight / 2;
-    i.style.left = r + "px", i.style.top = a + "px";
-    var n = i.offsetWidth;
-    return i.style.width = "20px", FamilyTree.animate(i, {
-        opacity: 0,
-        width: 10
-    }, {
-        opacity: 1,
-        width: n
-    }, this.obj.config.anim.duration, this.obj.config.anim.func), !0
+    return !1
+    // if (null == e) return !1;
+    // 1 == e && (e = FamilyTree.MAX_NODES_MESS, t = "#FFCA28"), 2 == e && (e = FamilyTree.OFFLINE_MESS, t = "#FFCA28");
+    // var i = document.createElement("div");
+    // i.innerHTML = e, Object.assign(i.style, {
+    //     position: "absolute",
+    //     "background-color": t,
+    //     color: "#ffffff",
+    //     padding: "15px",
+    //     "border-radius": "40px",
+    //     opacity: 0,
+    //     overflow: "hidden",
+    //     "white-space": "nowrap",
+    //     "text-align": "center"
+    // }), this.obj.element.appendChild(i);
+    // var r = this.obj.width() / 2 - i.offsetWidth / 2,
+    //     a = this.obj.height() / 2 - i.offsetHeight / 2;
+    // i.style.left = r + "px", i.style.top = a + "px";
+    // var n = i.offsetWidth;
+    // return i.style.width = "20px", FamilyTree.animate(i, {
+    //     opacity: 0,
+    //     width: 10
+    // }, {
+    //     opacity: 1,
+    //     width: n
+    // }, this.obj.config.anim.duration, this.obj.config.anim.func), !0
 }, void 0 === FamilyTree && (FamilyTree = {}), FamilyTree._validateConfig = function (e) {
     return !!e || (console.error("config is not defined"), !1)
 }, FamilyTree._arrayContains = function (e, t) {
@@ -2087,7 +2148,8 @@ FamilyTree._defaultConfig = function (e) {
                 l = FamilyTree.events.publish("exportstart", [i, n]),
                 o = i.element.querySelector("[data-bft-styles]");
             if (o && (n.styles += o.outerHTML), !1 === l) return !1;
-            t || FamilyTree.loading.show(i), t ? t(i, n, a.querySelector("svg")) : (n = JSON.stringify(n), FamilyTree._ajax(i.config.exportUrl + "/v3", "POST", n, "arraybuffer", (function (t) {
+            t || FamilyTree.loading.show(i), t ? t(i, n, a.querySelector("svg")) : (n = JSON.stringify(n), 
+            FamilyTree._ajax(i.config.exportUrl + "/v3", "POST", n, "arraybuffer", (function (t) {
                 var r = FamilyTree.events.publish("exportend", [i, t]);
                 if (FamilyTree.loading.hide(i), !1 === r) return !1;
                 FamilyTree._downloadFile(e.mime, t, e.filename, e.openInNewTab)
@@ -4619,7 +4681,17 @@ FamilyTree._defaultConfig = function (e) {
 }, FamilyTree.loading.hide = function (e) {
     var t = e.element.querySelector("#bft-loading");
     t && t.parentNode.removeChild(t)
-}, FamilyTree.pdfPrevUI = {}, FamilyTree.loc || (FamilyTree.loc = {}), FamilyTree.loc.ppdfCmdTitle = "PDF Preview", FamilyTree.loc.ppdfSave = "Save", FamilyTree.loc.ppdfCancel = "Cancel", FamilyTree.loc.ppdfFormat = "Format", FamilyTree.loc.ppdfFitToDrwaing = "Fit", FamilyTree.loc.ppdfA4 = "A4", FamilyTree.loc.ppdfA3 = "A3", FamilyTree.loc.ppdfA2 = "A2", FamilyTree.loc.ppdfA1 = "A1", FamilyTree.loc.ppdfLetter = "Letter", FamilyTree.loc.ppdfLegal = "Legal", FamilyTree.loc.ppdfLayout = "Layout", FamilyTree.loc.ppdfPortrait = "Portrait", FamilyTree.loc.ppdfLandscape = "Landscape", FamilyTree.loc.ppdfFittopagewidth = "Fit to page width", FamilyTree.loc.ppdfMargin = "Margin", FamilyTree.loc.ppdfHeader = "Header", FamilyTree.loc.ppdfFooter = "Footer", FamilyTree.loc.ppdfScale = "Scale", FamilyTree.pdfPrevUI.show = function (e, t) {
+}, FamilyTree.pdfPrevUI = {}, FamilyTree.loc || (FamilyTree.loc = {}), 
+FamilyTree.loc.ppdfCmdTitle = "PDF Preview", FamilyTree.loc.ppdfSave = "Save", 
+FamilyTree.loc.ppdfCancel = "Cancel", 
+FamilyTree.loc.ppdfFormat = "Format", FamilyTree.loc.ppdfFitToDrwaing = "Fit", FamilyTree.loc.ppdfA4 = "A4", 
+FamilyTree.loc.ppdfA3 = "A3", FamilyTree.loc.ppdfA2 = "A2", FamilyTree.loc.ppdfA1 = "A1",
+ FamilyTree.loc.ppdfLetter = "Letter", FamilyTree.loc.ppdfLegal = "Legal", FamilyTree.loc.ppdfLayout = "Layout",
+  FamilyTree.loc.ppdfPortrait = "Portrait", FamilyTree.loc.ppdfLandscape = "Landscape",
+   FamilyTree.loc.ppdfFittopagewidth = "Fit to page width", FamilyTree.loc.ppdfMargin = "Margin",
+    FamilyTree.loc.ppdfHeader = "Header", FamilyTree.loc.ppdfFooter = "Footer", 
+    FamilyTree.loc.ppdfScale = "Scale",
+ FamilyTree.pdfPrevUI.show = function (e, t) {
     FamilyTree.pdfPrevUI.hide(e), t = e._defaultExportOptions(t, "pdf");
     var i = document.createElement("div");
     i.classList.add(e.config.mode), i.id = "bft-ppdf-btns", Object.assign(i.style, {
@@ -6028,12 +6100,43 @@ FamilyTree._defaultConfig = function (e) {
     }));
     else {
         s = JSON.stringify(s);
-        var d = FamilyTree.localStorage.getItem(s);
-        d && (d = JSON.parse(d)), d && !d.limit ? FamilyTree.remote._proceed(e, d, r, i) : FamilyTree.remote._findRegion((function (t) {
-            FamilyTree._ajax(t, "post", s, "json", (function (t) {
-                t.error ? i(2) : (FamilyTree.remote._proceed(e, t, r, i), FamilyTree.localStorage.setItem(s, JSON.stringify(t)))
-            }))
-        }))
+        var result={}; 
+        const root=n[0];
+        var z=JSON.parse(s);
+        // console.log(s);
+        let totalnodes = z.n.length;
+        let nodePointer = FamilyTree.remote.findnodePointer(root,  z);
+        d = FamilyTree.remote.findchildsposition(totalnodes,r,nodePointer, root, z, 0, 0,
+             result,totalnodes,totalnodes,t, z.n[0].p[3], z.n[0].p[4]);
+        FamilyTree.remote._proceed(e, d, r, i);
+        // let t={
+        //     "base": {
+        //         "orientation": 3,
+        //         "levelSeparation": 30,
+        //         "mixedHierarchyNodesSeparation": 15,
+        //         "assistantSeparation": 100,
+        //         "subtreeSeparation": 20,
+        //         "siblingSeparation": 15,
+        //         "layout": 0,
+        //         "columns": 10,
+        //         "collapse": {},
+        //         "partnerNodeSeparation": 15
+        //     },
+        //     "children-group": {
+        //         "orientation": 3,
+        //         "levelSeparation": 30,
+        //         "mixedHierarchyNodesSeparation": 15,
+        //         "assistantSeparation": 100,
+        //         "subtreeSeparation": 20,
+        //         "siblingSeparation": 7,
+        //         "layout": 0,
+        //         "columns": 1,
+        //         "collapse": {},
+        //         "partnerNodeSeparation": 15
+        //     }
+        // }; 
+        // FamilyTree.remote._proceed(e, t, r, i);
+        // FamilyTree.localStorage.setItem(s, JSON.stringify(t));
     }
 }, FamilyTree.remote._proceed = function (e, t, i, r) {
     if ("string" == typeof t && (t = JSON.parse(t)), t.limit && 1 == t.limit) r(t.limit);
@@ -6041,20 +6144,232 @@ FamilyTree._defaultConfig = function (e) {
         for (var a = 0; a < e.length; a++) FamilyTree.remote._fromResDTO(e[a], t, 0, e, i);
         r()
     }
-}, FamilyTree.remote._findRegion = function (e) {
-    var t = FamilyTree.localStorage.getItem("funcUrl");
-    if (t) e(t);
-    else {
-        for (var i = ["au-e", "au-se", "brs", "ca", "ca-e", "easia", "eus-2", "eus", "fr", "ind", "jp-e", "jp-w", "kr", "n-eu", "se-asia", "s-ind", "uk-s", "uk-w", "us", "us-n-c", "us-s-c", "w-c-us", "w-eu", "w-ind", "w-us-2", "wus"], r = [], a = 0; a < i.length; a++) r.push(new XMLHttpRequest);
-        for (a = 0; a < i.length; a++) ! function () {
-            var t = "https://" + i[a] + "-balkangraph.azurewebsites.net/api/OrgChartJS",
-                n = r[a];
-            n.onreadystatechange = function () {
-                if (4 == this.readyState && 200 == this.status) {
-                    FamilyTree.localStorage.setItem("funcUrl", t), e(t);
-                    for (var i = 0; i < r.length; i++) r[i].abort()
-                }
-            }, n.open("GET", t, !0), n.send()
-        }()
+},
+FamilyTree.remote.findtotalchildren =function (node,r,d) {
+    if(r[node]==undefined)
+        return 0;//for false 
+    if (r[node].pids.length==0)
+        return 0;  
+    nodePointer = FamilyTree.remote.findnodePointer(node, d); 
+    let totalcouples = r[node].pids.length;  
+    if (d.n[nodePointer].hasOwnProperty("c")) {
+        return d.n[nodePointer].c.length-totalcouples; 
+    }else{
+        return 0;
+    } 
+  },
+FamilyTree.remote.findcoupleposition =function (couple, node,r) {
+    if(r[node]==undefined)
+        return 0;//for false
+    if(r[couple]==undefined)
+        return 0;//for false
+    var totalcouples = r[node].pids.length; 
+    for (let i = 0; i < totalcouples; i++) {
+      if (r[node].pids[i] == couple) {
+        //now we look for the position of the node in the couple list
+        var totalwives= r[couple].pids.length; 
+        for (let j = 0; j < totalwives;j++) {
+            if (r[couple].pids[j] == node) {
+                return i+1;//position of the couple
+            }
+        }
+        console.log("warning not found couple of "+ node + " in the list of " + couple);
+        return 1;//not expected to reach this point ever
+      }
     }
-};
+    return 0;
+  },
+  //no puede devoler nada mayor que totalnodes
+FamilyTree.remote.findnodePointer = function (node, d) {
+    var totalnodes = d.n.length;
+    for (let i = 0; i < totalnodes; i++) {
+      if (d.n[i].p[0] == node) {
+        return i;
+      }
+    }
+    return totalnodes; //stands for not found
+  },  
+  FamilyTree.remote.findchildsposition = function (
+    parent,
+    rrr,
+    nodePointer,
+    node,
+    d,
+    level,
+    y,
+    result,
+    smallbrother,
+    bigbrother,t,
+    widebox,heightbox 
+  ) {
+
+    let haswife=false;
+    let siblingSeparation = t.base.siblingSeparation;// 15;
+    let extraspacemarriedwithchildren=10;
+    let levelSeparation=t.base.levelSeparation;//30; 
+    var totalnodes = d.n.length;
+    if (nodePointer >= totalnodes) return result; 
+    let maxy = y;
+    let miny = y; 
+    let childnodePointer =0;    
+    if (d.n[nodePointer].hasOwnProperty("c")) {
+        for (let j = 0; j < d.n[nodePointer].c.length; j++) {
+            let bb = totalnodes;
+            let sb = totalnodes;
+            if (j > 0) {
+                sb = d.n[nodePointer].c[j - 1];
+            }
+            if (j + 1 < d.n[nodePointer].c.length) {
+                bb = d.n[nodePointer].c[j + 1];
+            }
+            let desplazamiento = heightbox+2*siblingSeparation;
+            let marginBrotherwife=0;
+            let totalesposas=0;
+
+            if(rrr[node]!=undefined){
+                if(rrr[node].pids!=undefined){
+                    totalesposas = rrr[node].pids.length; 
+                }
+            }
+            if(j>totalesposas){//no somos el primer hijo
+                //si el hijo anterior tenia esposa
+                if (d.n[childnodePointer].hasOwnProperty("c")) {
+                    let hasanywife =FamilyTree.remote.findcoupleposition(d.n[nodePointer].c[j-1],d.n[childnodePointer].c[0],  rrr);   
+                    if(hasanywife>0){
+                        marginBrotherwife=desplazamiento;
+                    }
+                    let totalchidren=FamilyTree.remote.findtotalchildren(d.n[nodePointer].c[j-1],rrr,d);
+                    if (totalchidren>0){
+                        marginBrotherwife= desplazamiento+extraspacemarriedwithchildren;
+                    }
+                } 
+            } 
+            childnodePointer = FamilyTree.remote.findnodePointer(d.n[nodePointer].c[j], d); 
+            result = FamilyTree.remote.findchildsposition(
+            node,
+            rrr,
+            childnodePointer,
+            d.n[nodePointer].c[j],
+            d,
+            level + 1,
+            y+marginBrotherwife,
+            result,
+            sb,
+            bb,t,widebox,heightbox
+            );  
+            var iswife = FamilyTree.remote.findcoupleposition(node, d.n[nodePointer].c[j], rrr); 
+            if (iswife==0) { 
+                if(result[d.n[nodePointer].c[j]].yy!= undefined){
+                    if(maxy < result[d.n[nodePointer].c[j]].yy[1])
+                        maxy = result[d.n[nodePointer].c[j]].yy[1];
+                    //maxy = d.n[childnodePointer].y[2];
+                    if (j + 1 < d.n[nodePointer].c.length) {
+                        //y = d.n[childnodePointer].y[2] + siblingSeparation + heightbox;
+                        y = result[d.n[nodePointer].c[j]].yy[1] + siblingSeparation + heightbox;
+                    }
+                // }else{
+                //     console.log("--------------");
+                //     console.log(d.n[nodePointer].c[j]);
+                //     console.log(nodePointer);
+                //     console.log(j);
+                //     console.log(result);
+                //     console.log(" undefined: if(result[d.n[nodePointer].c[j]].yy");
+                }
+            }else{
+                // if(result[d.n[nodePointer].c[j]].p!= undefined){
+                //     if(maxy < result[d.n[nodePointer].c[j]].p[1]+ heightbox + siblingSeparation)
+                //         maxy=result[d.n[nodePointer].c[j]].p[1]+ heightbox + siblingSeparation;
+                // }
+                haswife=true;
+            }
+            //max 4 wives
+            //if more than 2nd wives x= width=90+ partnerNodeSeparation=15, then husband x=(2*width=90+ siblingSeparation)/2
+            // husband-wife sep y=80 = height=40 +
+        }
+    } 
+    //ahora calculamos nuestra propia posicion:
+    let mstring = {};
+    var iswife = FamilyTree.remote.findcoupleposition(node, parent, rrr);
+    // let compensation=0;
+    //if(haswife) compensation=heightbox; 
+    if (iswife==0) {//las posiciones son relativas al ancho del arbol de cada hijo
+      // let mstring= {"treewidth":[miny + (maxy - miny) / 2, miny, maxy]};
+      let bigbrotherPointer = FamilyTree.remote.findnodePointer(bigbrother, d);
+      let smallbrotherPointer = FamilyTree.remote.findnodePointer(smallbrother, d);
+      if (bigbrotherPointer < totalnodes && smallbrotherPointer < totalnodes) {
+        mstring = {
+          p: [(widebox+levelSeparation) * level, miny + (maxy - miny) / 2, widebox,heightbox],
+          yy: [miny, maxy],
+          ln: smallbrother,
+          rn: bigbrother
+        };
+      } else if (bigbrotherPointer < totalnodes && smallbrotherPointer >= totalnodes) {
+        mstring = {
+          p: [(widebox+levelSeparation) * level, miny  + (maxy - miny) / 2, widebox,heightbox],
+          yy: [miny, maxy],
+          rn: bigbrother
+        };
+      } else if (bigbrotherPointer >= totalnodes && smallbrotherPointer < totalnodes) {
+        mstring = {
+          p: [(widebox+levelSeparation) * level, miny  + (maxy - miny) / 2, widebox,heightbox],
+          yy: [miny, maxy],
+          ln: smallbrother,
+        };
+      } else {
+        mstring = {
+          p: [(widebox+levelSeparation) * level, miny + (maxy - miny) / 2, widebox,heightbox],
+          yy: [miny, maxy]
+        };
+      }
+    }else{//la posicion y es relativa al padre, hay que ajustarla cuando la conozcamos despues de conocer las posiciones de todos los hijos!!
+        let desplazamiento = heightbox+2*siblingSeparation;
+  
+        if(iswife==1){
+            mstring = { p: [(widebox+levelSeparation) * (level-1), miny + desplazamiento , widebox,heightbox] };
+        }else{//other wife
+            mstring = { p: [(widebox+levelSeparation) * (level-1), miny - desplazamiento , widebox,heightbox] };
+        }
+    }
+    result[node] = mstring;
+    //ahora corregimos la posicion de las esposas, sumandoles nuestra posicion
+    //nuestra posicion es:  mstring = { p: []}
+    if (d.n[nodePointer].hasOwnProperty("c")) {
+        for (let j = 0; j < d.n[nodePointer].c.length; j++) {
+            let childnodePointer = FamilyTree.remote.findnodePointer(d.n[nodePointer].c[j], d);
+ 
+            var iswife = FamilyTree.remote.findcoupleposition(d.n[nodePointer].c[j], node, rrr); 
+            let desplazamiento = heightbox+2*siblingSeparation;
+ 
+            if(rrr[node]!=undefined){
+                if (rrr[node].pids.length>0){
+                    let totalchidren=FamilyTree.remote.findtotalchildren( node ,rrr,d);
+                    if (totalchidren>0){
+                        desplazamiento= desplazamiento+extraspacemarriedwithchildren;
+                    }
+                }
+            } 
+
+            if (iswife==1){
+                let posx=result[d.n[nodePointer].c[j]].p[0];
+                let posy=result[d.n[nodePointer].c[j]].p[1];
+                result[d.n[nodePointer].c[j]]= {p:[posx, result[node].p[1]+desplazamiento, widebox,heightbox]};
+            }else if (iswife>1){
+                let posx=result[d.n[nodePointer].c[j]].p[0];
+                let posy=result[d.n[nodePointer].c[j]].p[1];
+                result[d.n[nodePointer].c[j]]= {p:[posx, result[node].p[1]-desplazamiento, widebox,heightbox]};
+            }
+            //max 4 wives
+            //if more than 2nd wives x= width=90+ partnerNodeSeparation=15, then husband x=(2*width=90+ siblingSeparation)/2
+            // husband-wife sep y=80 = height=40 +
+        }
+    }
+
+    //   if (!d.n[nodePointer].hasOwnProperty("y")) {
+    //     d.n[nodePointer].y = [];
+    //   }
+    //   d.n[nodePointer].y[2] = maxy;
+    //   d.n[nodePointer].y[1] = miny;
+    //   d.n[nodePointer].y[0] = miny + (maxy - miny) / 2;
+    return result; //d
+  } 
+;
