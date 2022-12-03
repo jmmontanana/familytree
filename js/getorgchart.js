@@ -3399,22 +3399,22 @@ getOrgChart.prototype.exportToImage = function () {
     t.dispatchEvent(u);
   }
   var f = "";
-//   for (i = 0; i < document.styleSheets.length; i++) {
-//     if (
-//       document.styleSheets[i].href &&
-//       document.styleSheets[i].href.indexOf("get-org-chart.css") != -1
-//     ) {
-//       f = document.styleSheets[i].href;
-//       break;
-//     }
-//     if (
-//       document.styleSheets[i].href &&
-//       document.styleSheets[i].href.indexOf("getorgchart.css") != -1
-//     ) {
-//       f = document.styleSheets[i].href;
-//       break;
-//     }
-//   }
+  // for (i = 0; i < document.styleSheets.length; i++) {
+  //   if (
+  //     document.styleSheets[i].href &&
+  //     document.styleSheets[i].href.indexOf("get-org-chart.css") != -1
+  //   ) {
+  //     f = document.styleSheets[i].href;
+  //     break;
+  //   }
+  //   if (
+  //     document.styleSheets[i].href &&
+  //     document.styleSheets[i].href.indexOf("getorgchart.css") != -1
+  //   ) {
+  //     f = document.styleSheets[i].href;
+  //     break;
+  //   }
+  // }
   setTimeout(function () {
     get._a._B(f, null, function (t) {
       var u = new XMLSerializer().serializeToString(o._X._v);
