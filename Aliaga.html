@@ -1,42 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+ <!-- https://htmlpreview.github.io/?https://github.com/jmmontanana/familytree/blob/main/familytree4.html -->
+ <!-- https://balkan.app/FamilyTreeJS/Docs/CSSCustomization -->
 <head>
  <meta http-equiv="Access-Control-Allow-Origin" content="* https://raw.githubusercontent.com/jmmontanana/*"/>
  <meta charset="utf-8">
- <title>Organization</title>
- <!-- <link rel="icon" href="img/logo.png"> -->
- <link rel="stylesheet" href="css/jquery.css" type="text/css">
- <!-- <link rel="stylesheet" href="css/style.css" type="text/plain"> -->
+ <title>Organization Chart Plugin</title>
+ <link rel="icon" href="img/logo.png">
+ <link rel="stylesheet" href="css/jquery.orgchart.css">
+ <link rel="stylesheet" href="css/style.css">
  <style type="text/css">
-    html,body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  padding: 1px;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial;
-  color: #333333;
-}
-
-#chart-container {
-  position: relative;
-  height: 420px;
-  border: 1px solid #aaa;
-  margin: 0.5rem;
-  overflow: auto;
-  text-align: center;
-}
-
  .orgchart .second-menu-icon {
-    transition:opacity .5s;
-    opacity:0;
-    right:-5px;
-    top:-5px;
-    z-index:2;
-    position:absolute;
+ transition:opacity .5s;
+ opacity:0;
+ right:-5px;
+ top:-5px;
+ z-index:2;
+ position:absolute;
  }
 
  .orgchart .second-menu-icon::before {
@@ -635,16 +615,16 @@ FamilyTree.templates.john_female.node = '<rect x="0" y="0" height="{h}" width="{
                    fullScreen: true
                },
  menu:{
-        // pdf:{
-        // text:"Export PDF",
-        // icon:FamilyTree.icon.pdf(24, 24, "#7A7A7A"),
-        // onClick:pdf
-        // },
-        // preview:{
-        // text:"preview PDF",
-        // icon:FamilyTree.icon.pdf(24, 24, "#7A7A7A"),
-        // onClick:preview
-        // },
+        pdf:{
+        text:"Export PDF",
+        icon:FamilyTree.icon.pdf(24, 24, "#7A7A7A"),
+        onClick:pdf
+        },
+        preview:{
+        text:"preview PDF",
+        icon:FamilyTree.icon.pdf(24, 24, "#7A7A7A"),
+        onClick:preview
+        },
         xml:{
         text:"Export XML"
         },
@@ -730,44 +710,44 @@ FamilyTree.templates.john_female.node = '<rect x="0" y="0" height="{h}" width="{
  // Pids Mid Fid Name Gender birthDate Familytree Img Tel Email Resume Isdel UpdateTime
  // pids:[null],mid:null,fid:null
  nodes:[
-{id:7101,pids:[null],mid:6902,fid:7002,apellidos:"xxxx Linares", name:"Rosalía",gender:"female"},
-{id:8801,pids:[null],mid:8702,fid:8602,apellidos:"Cuallado",name:"Dennis",gender:"male"},
-{id:8901,pids:[null],mid:8702,fid:8602,apellidos:"Cuallado",name:"Corinne",gender:"female"},
-{id:6202,pids:[6302],mid:null,fid:null,apellidos:"Cuallado Fort",name:"Francisco",gender:"male"},
-{id:6302,pids:[6202],mid:null,fid:null,apellidos:"Cortés Moliner",name:"Rosalía",gender:"female"},
-{id:6902,pids:[7002],mid:6703,fid:6803,apellidos:"1 Linares Cuallado",name:"Rosalia",gender:"female"},
-{id:7002,pids:[6902],mid:null,fid:null,apellidos:"no lo se",gender:"male"},
-{id:7302,pids:[null],mid:6703,fid:6803,apellidos:"2 Linares Cuallado",name:"Inocencia",gender:"female"},
-{id:7402,pids:[null],mid:6703,fid:6803,apellidos:"3 Linares Cuallado",name:"Maruja",gender:"female"},
-{id:7802,pids:[null],mid:7603,fid:7703,apellidos:"1 Cuallado",name:"Juan Bautista",gender:"male"},
-{id:7902,pids:[null],mid:7603,fid:7703,apellidos:"2 Cuallado",name:"Vicenta",gender:"female"},
-{id:8002,pids:[null],mid:7603,fid:7703,apellidos:"3 Cuallado",name:"Rosalía",gender:"female"},
-{id:8402,pids:[null],mid:8303,fid:8203,apellidos:"1 Cuallado",name:"Concha",gender:"female"},
-{id:8502,pids:[null],mid:8303,fid:8203,apellidos:"2 Cuallado", name:"Pepe",gender:"male"},
-{id:8602,pids:[8702],mid:8303,fid:8203,apellidos:"3 Cuallado",name:"Pascual",gender:"male"},
-{id:8702,pids:[8602],mid:null,fid:null,apellidos:"Amparin",gender:"female"},
-{id:9102,pids:[null],mid:8303,fid:8203,apellidos:"4 Cuallado",name:"Francisco",gender:"male"},
-{id:9202,pids:[null],mid:8303,fid:8203,apellidos:"5 Cuallado",name:"María",gender:"female"},
-{id:6403,pids:[null],mid:6302,fid:6202,apellidos:"1 Cuallado Cortés",name:"Francisco",gender:"male"},
-{id:6603,pids:[6506],mid:6302,fid:6202,apellidos:"2 Cuallado Cortés",name:"Andrea",gender:"female"},
-{id:6703,pids:[6803],mid:6302,fid:6202,apellidos:"3 Cuallado Cortés",name:"Rosalía",gender:"female"},
-{id:6803,pids:[6703],mid:null,fid:null,apellidos:"Linares",name:"José",gender:"male"},
-{id:7603,pids:[7703],mid:6302,fid:6202,apellidos:"4 Cuallado Cortés",name:"Bautista",gender:"male"},
-{id:7703,pids:[7603],mid:null,fid:null,apellidos:"Vicenta",gender:"female"},
-{id:8203,pids:[8303],mid:6302,fid:6202,apellidos:"5 Cuallado Cortés",name:"Pascual",gender:"male"},
-{id:8303,pids:[8203],mid:null,fid:null,apellidos:"Concha",gender:"female"},
-{id:11803,pids:[null],mid:11604,fid:11704,apellidos:"Vicenta",gender:"female"},
-{id:12203,pids:[null],mid:12104,fid:12004,apellidos:"Esparza",name:"Bernardo",gender:"male"},
-{id:12603,pids:[null],mid:12404,fid:12504,apellidos:"1 Asunción Esparza",name:"Gaspar",gender:"male"},
+{id:7101,pids:[null],mid:6902,fid:7002,apellidos:"Rosalía"},
+{id:8801,pids:[8901],mid:8702,fid:8602,apellidos:"Dennis Cuallado"},
+{id:8901,pids:[8801],mid:8702,fid:8602,apellidos:"Corinne Cuallado"},
+{id:6202,pids:[6302],mid:null,fid:null,apellidos:"Cuallado Fort",name:"Francisco"},
+{id:6302,pids:[6202],mid:null,fid:null,apellidos:"Cortés Moliner",name:"Rosalía"},
+{id:6902,pids:[7002],mid:6703,fid:6803,apellidos:"1 Linares Cuallado",name:"Rosalia"},
+{id:7002,pids:[6902],mid:null,fid:null,apellidos:"no lo se"},
+{id:7302,pids:[null],mid:6703,fid:6803,apellidos:"2 Linares Cuallado",name:"Inocencia"},
+{id:7402,pids:[null],mid:6703,fid:6803,apellidos:"3 Linares Cuallado",name:"Maruja"},
+{id:7802,pids:[null],mid:7603,fid:7703,apellidos:"1 Cuallado",name:"Juan Bautista"},
+{id:7902,pids:[null],mid:7603,fid:7703,apellidos:"2 Cuallado",name:"Vicenta"},
+{id:8002,pids:[null],mid:7603,fid:7703,apellidos:"3 Cuallado",name:"Rosalía"},
+{id:8402,pids:[null],mid:8303,fid:8203,apellidos:"1 Cuallado",name:"Concha"},
+{id:8502,pids:[null],mid:8303,fid:8203,apellidos:"2 Cuallado", name:"Pepe"},
+{id:8602,pids:[8702],mid:8303,fid:8203,apellidos:"3 Cuallado",name:"Pascual"},
+{id:8702,pids:[8602],mid:null,fid:null,apellidos:"Amparin"},
+{id:9102,pids:[null],mid:8303,fid:8203,apellidos:"4 Cuallado",name:"Francisco"},
+{id:9202,pids:[null],mid:8303,fid:8203,apellidos:"5 Cuallado",name:"María"},
+{id:6403,pids:[null],mid:6302,fid:6202,apellidos:"1 Cuallado Cortés",name:"Francisco"},
+{id:6603,pids:[6506],mid:6302,fid:6202,apellidos:"2 Cuallado Cortés",name:"Andrea"},
+{id:6703,pids:[6803],mid:6302,fid:6202,apellidos:"3 Cuallado Cortés",name:"Rosalía"},
+{id:6803,pids:[6703],mid:null,fid:null,apellidos:"Linares",name:"José"},
+{id:7603,pids:[7703],mid:6302,fid:6202,apellidos:"4 Cuallado Cortés",name:"Bautista"},
+{id:7703,pids:[7603],mid:null,fid:null,apellidos:"Vicenta"},
+{id:8203,pids:[8303],mid:6302,fid:6202,apellidos:"5 Cuallado Cortés",name:"Pascual"},
+{id:8303,pids:[8203],mid:null,fid:null,apellidos:"Concha"},
+{id:11803,pids:[null],mid:11604,fid:11704,apellidos:"Vicenta"},
+{id:12203,pids:[null],mid:12104,fid:12004,apellidos:"Esparza",name:"Bernardo"},
+{id:12603,pids:[null],mid:12404,fid:12504,apellidos:"1 Asunción Esparza",name:"Gaspar"},
 {id:12703,pids:[null],mid:12404,fid:12504,apellidos:"2 Ahijado de Alberto Aliaga Zanón"},
 {id:9504,pids:[null],mid:9405,fid:9305,apellidos:"1 Gimeno Urios",name:"Miguel",gender:"male"},
-{id:9604,pids:[null],mid:9405,fid:9305,apellidos:"2 Gimeno Urios",name:"Angelina",gender:"female"},
-{id:10004,pids:[null],mid:9805,fid:9905,apellidos:"1 Marí Urios",name:"Delfina",gender:"female"},
+{id:9604,pids:[null],mid:9405,fid:9305,apellidos:"2 Gimeno Urios",name:"Angelina"},
+{id:10004,pids:[null],mid:9805,fid:9905,apellidos:"1 Marí Urios",name:"Delfina"},
 {id:10104,pids:[null],mid:9805,fid:9905,apellidos:"2 Marí Urios",name:"Luis",gender:"male"},
-{id:10504,pids:[null],mid:10405,fid:10305,apellidos:"Ferrer Urios",name:"Amparo",gender:"female"},
+{id:10504,pids:[null],mid:10405,fid:10305,apellidos:"Ferrer Urios",name:"Amparo"},
 {id:11404,pids:[11504],mid:11205,fid:11305,apellidos:"1 Esparza",name:"Miguel",gender:"male"},
-{id:11504,pids:[11404],mid:null,fid:null,apellidos:"Urios Esparza",name:"Vicenta",gender:"female"},//error?
-{id:11604,pids:[11704],mid:11205,fid:11305,apellidos:"2 Esparza",name:"Vicenta",gender:"female"},
+{id:11504,pids:[11404],mid:null,fid:null,apellidos:"Urios Esparza",name:"Vicenta"},//error?
+{id:11604,pids:[11704],mid:11205,fid:11305,apellidos:"2 Esparza",name:"Vicenta"},
 {id:11704,pids:[11604],mid:null,fid:null,apellidos:"Jesús",gender:"male"},
 {id:12004,pids:[12104],mid:11205,fid:11305,apellidos:"3 Esparza",name:"Pepe",gender:"male"},
 {id:12104,pids:[12004],mid:null,fid:null,apellidos:"Pilar",gender:"female"},
@@ -795,10 +775,10 @@ FamilyTree.templates.john_female.node = '<rect x="0" y="0" height="{h}" width="{
 {id:9805,pids:[9905],mid:9006,fid:8906,apellidos:"4 Urios Gamila",name:"Delfina",gender:"female"},
 {id:9905,pids:[9805],mid:null,fid:null,apellidos:" Marí",name:"Luis",gender:"male"},
 {id:10205,pids:[null],mid:9006,fid:8906,apellidos:"5 Urios Gamila",name:"Álvaro",gender:"male"},
-{id:10305,pids:[10405],mid:9006,fid:8906,apellidos:"6 Urios Gamila",name:"Amparo",gender:"female"},
+{id:10305,pids:[10405],mid:9006,fid:8906,apellidos:"6 Urios Gamila",name:"Amparo"},
 {id:10405,pids:[10305],mid:null,fid:null,apellidos:"Ferrer",name:"José",gender:"male"},
 {id:10705,pids:[10805],mid:9006,fid:8906,apellidos:"7 Urios Gamila",name:"Miguel",gender:"male"},
-{id:10805,pids:[10705],mid:null,fid:null,apellidos:" Mallor",name:"Carmen",gender:"female"},
+{id:10805,pids:[10705],mid:null,fid:null,apellidos:" Mallor",name:"Carmen"},
 {id:11205,pids:[11305],mid:11006,fid:11106,apellidos:"1 Esparza Urios",name:"José",gender:"male"},
 {id:11305,pids:[11205],mid:null,fid:null,apellidos:"María",gender:"female"},
 {id:12705,pids:[12805],mid:11006, fid:11106 ,apellidos:"2 Esparza Urios",name:"Elvira",gender:"female"},
@@ -941,20 +921,20 @@ FamilyTree.templates.john_female.node = '<rect x="0" y="0" height="{h}" width="{
 {id:11215,pids:[11115],mid:null,fid:null,apellidos:"Ester",gender:"female"},
 {id:11315,pids:[11415],mid:9314,fid:9214,apellidos:"6 Sayas Ortiz",name:"Mari Carmen",gender:"female"},
 {id:11415,pids:[11315],mid:null,fid:null,apellidos:"García",name:"José Antonio",gender:"male"},
-{id:11815,pids:[11915],mid:11714,fid:11614,apellidos:"1 Sayas Lloris",name:"María Amparo",gender:"female"},
-{id:11915,pids:[11815],mid:null,fid:null,apellidos:"Herrando Mariscal",name:"J",gender:"male"},
-{id:12115,pids:[null],mid:11714,fid:11614,apellidos:"2 Sayas Lloris",name:"Trinidad",gender:"female"},
-{id:12215,pids:[12315],mid:11714,fid:11614,apellidos:"3 Sayas Lloris",name:"María José",gender:"female"},
-{id:12315,pids:[12215],mid:null,fid:null,apellidos:"Gironés",name:"Fernando",gender:"male"},
-{id:12415,pids:[null],mid:11714,fid:11614,apellidos:"4 Sayas Lloris",name:"Manuel",gender:"male"},
-{id:12515,pids:[null],mid:11714,fid:11614,apellidos:"5 Sayas Lloris",name:"Nacho",gender:"male"},
-{id:12615,pids:[null],mid:11714,fid:11614,apellidos:"6 Sayas Lloris",name:"Raquel",gender:"female"},
-{id:13315,pids:[13415],mid:12814,fid:12914,apellidos:"1 Tarragón Sayas",name:"Elena",gender:"female"},
-{id:13415,pids:[13315],mid:null,fid:null,apellidos:"Siches",name:"Bartolomé",gender:"male"},
-{id:13715,pids:[13815],mid:12814,fid:12914,apellidos:"2 Tarragón Sayas",name:"Alfredo",gender:"male"},
-{id:13815,pids:[13715],mid:null,fid:null,apellidos:"Vivas",name:"María Dolores",gender:"female"},
-{id:14215,pids:[14315],mid:12814,fid:12914,apellidos:"3 Tarragón Sayas",name:"Angeles",gender:"female"},
-{id:14315,pids:[14215],mid:null,fid:null,apellidos:"Vázquez",name:"Antonio",gender:"male"},
+// {id:11815,pids:[11915],mid:11714,fid:11614,apellidos:"1 Sayas Lloris",name:"María Amparo",gender:"female"},
+// {id:11915,pids:[11815],mid:null,fid:null,apellidos:"Herrando Mariscal",name:"J",gender:"male"},
+// {id:12115,pids:[null],mid:11714,fid:11614,apellidos:"2 Sayas Lloris",name:"Trinidad",gender:"female"},
+// {id:12215,pids:[12315],mid:11714,fid:11614,apellidos:"3 Sayas Lloris",name:"María José",gender:"female"},
+// {id:12315,pids:[12215],mid:null,fid:null,apellidos:"Gironés",name:"Fernando",gender:"male"},
+// {id:12415,pids:[null],mid:11714,fid:11614,apellidos:"4 Sayas Lloris",name:"Manuel",gender:"male"},
+// {id:12515,pids:[null],mid:11714,fid:11614,apellidos:"5 Sayas Lloris",name:"Nacho",gender:"male"},
+// {id:12615,pids:[null],mid:11714,fid:11614,apellidos:"6 Sayas Lloris",name:"Raquel",gender:"female"},
+// {id:13315,pids:[13415],mid:12814,fid:12914,apellidos:"1 Tarragón Sayas",name:"Elena",gender:"female"},
+// {id:13415,pids:[13315],mid:null,fid:null,apellidos:"Siches",name:"Bartolomé",gender:"male"},
+// {id:13715,pids:[13815],mid:12814,fid:12914,apellidos:"2 Tarragón Sayas",name:"Alfredo",gender:"male"},
+// {id:13815,pids:[13715],mid:null,fid:null,apellidos:"Vivas",name:"María Dolores",gender:"female"},
+// {id:14215,pids:[14315],mid:12814,fid:12914,apellidos:"3 Tarragón Sayas",name:"Angeles",gender:"female"},
+// {id:14315,pids:[14215],mid:null,fid:null,apellidos:"Vázquez",name:"Antonio",gender:"male"},
 {id:14715,pids:[14815],mid:14514,fid:14614,apellidos:"1 García Sayas",name:"Carlos",gender:"male"},
 {id:14815,pids:[14715],mid:null,fid:null,apellidos:"Segurado",name:"Belén",gender:"female"},
 {id:15115,pids:[15215],mid:14514,fid:14614,apellidos:"2 García Sayas",name:"Manuel",gender:"male"},
@@ -975,25 +955,25 @@ FamilyTree.templates.john_female.node = '<rect x="0" y="0" height="{h}" width="{
 {id:9816,pids:[null],mid:9615,fid:9715,apellidos:"1 Vidal Sayas",name:"Enrique",gender:"male"},
 {id:9916,pids:[null],mid:9615,fid:9715,apellidos:"2 Vidal Sayas",name:"Jesús",gender:"male"},
 {id:10016,pids:[null],mid:9615,fid:9715,apellidos:"3 Vidal Sayas",name:"Víctor",gender:"male"},
-{id:10416,pids:[null],mid:10215,fid:10315,apellidos:"Rovira Sayas",name:"Victoria",gender:"female",comment:" adoptada"},
-{id:10816,pids:[null],mid:10715,fid:10615,apellidos:"1 Sayas Cardona",name:"Juan José",gender:"male"},
-{id:10916,pids:[null],mid:10715,fid:10615,apellidos:"2 Sayas Cradona",name:"Irene",gender:"female"},
-{id:12016,pids:[null],mid:11815,fid:11915,apellidos:"Herrando Sayas",name:"Miguel",gender:"male"},
-{id:12416,pids:[null],mid:12215,fid:12315,apellidos:"1 Gironés Sayas",name:"Guillermo",gender:"male"},
-{id:12516,pids:[null],mid:12215,fid:12315,apellidos:"2 Girones Sayas",name:"Alejandra",gender:"female"},
-{id:13516,pids:[null],mid:13315,fid:13415,apellidos:"Siches Tarragón",name:"Raul",gender:"male"},
-{id:13916,pids:[null],mid:13815,fid:13715,apellidos:"1 Tarragón Vivas",name:"Lorena",gender:"female"},
-{id:14016,pids:[null],mid:13815,fid:13715,apellidos:"2 Tarragón Vivas",name:"Lucía",gender:"female"},
-{id:14416,pids:[null],mid:14215,fid:14315,apellidos:"1 Vázquez Tarragón",name:"Antonio",gender:"male"},
-{id:14516,pids:[null],mid:14215,fid:14315,apellidos:"2 Vázquez Taragón",name:"Emilio",gender:"male"},
-{id:14916,pids:[null],mid:14815,fid:14715,apellidos:"García Segurado",name:"Nieves",gender:"female"},
-{id:15316,pids:[null],mid:15215,fid:15115,apellidos:"1 García Berga",name:"Luis",gender:"male"},
-{id:15416,pids:[null],mid:15215,fid:15115,apellidos:"2 García Berga",name:"Nuria",gender:"female"},
-{id:15816,pids:[null],mid:15715,fid:15615,apellidos:"García Pérez",name:"Carlos",gender:"male"},
-{id:16216,pids:[null],mid:16115,fid:16014,apellidos:"1 Sayas Liceras",name:"Mª Dolores",gender:"female"},
-{id:16316,pids:[null],mid:16115,fid:16014,apellidos:"2 Sayas Liceras",name:"Eugenio",gender:"male"},
-{id:16416,pids:[null],mid:16115,fid:16014,apellidos:"3 Sayas Liceras",name:"Miguel",gender:"male"},
-{id:16516,pids:[null],mid:16115,fid:16014,apellidos:"4 Sayas Liceras",name:"Samuel",gender:"male"},
+// {id:10416,pids:[null],mid:10215,fid:10315,apellidos:"Rovira Sayas",name:"Victoria",gender:"female",comment:" adoptada"},
+// {id:10816,pids:[null],mid:10715,fid:10615,apellidos:"1 Sayas Cardona",name:"Juan José",gender:"male"},
+// {id:10916,pids:[null],mid:10715,fid:10615,apellidos:"2 Sayas Cradona",name:"Irene",gender:"female"},
+// {id:12016,pids:[null],mid:11815,fid:11915,apellidos:"Herrando Sayas",name:"Miguel",gender:"male"},
+// {id:12416,pids:[null],mid:12215,fid:12315,apellidos:"1 Gironés Sayas",name:"Guillermo",gender:"male"},
+// {id:12516,pids:[null],mid:12215,fid:12315,apellidos:"2 Girones Sayas",name:"Alejandra",gender:"female"},
+// {id:13516,pids:[null],mid:13315,fid:13415,apellidos:"Siches Tarragón",name:"Raul",gender:"male"},
+// {id:13916,pids:[null],mid:13815,fid:13715,apellidos:"1 Tarragón Vivas",name:"Lorena",gender:"female"},
+// {id:14016,pids:[null],mid:13815,fid:13715,apellidos:"2 Tarragón Vivas",name:"Lucía",gender:"female"},
+// {id:14416,pids:[null],mid:14215,fid:14315,apellidos:"1 Vázquez Tarragón",name:"Antonio",gender:"male"},
+// {id:14516,pids:[null],mid:14215,fid:14315,apellidos:"2 Vázquez Taragón",name:"Emilio",gender:"male"},
+// {id:14916,pids:[null],mid:14815,fid:14715,apellidos:"García Segurado",name:"Nieves",gender:"female"},
+// {id:15316,pids:[null],mid:15215,fid:15115,apellidos:"1 García Berga",name:"Luis",gender:"male"},
+// {id:15416,pids:[null],mid:15215,fid:15115,apellidos:"2 García Berga",name:"Nuria",gender:"female"},
+// {id:15816,pids:[null],mid:15715,fid:15615,apellidos:"García Pérez",name:"Carlos",gender:"male"},
+// {id:16216,pids:[null],mid:16115,fid:16014,apellidos:"1 Sayas Liceras",name:"Mª Dolores",gender:"female"},
+// {id:16316,pids:[null],mid:16115,fid:16014,apellidos:"2 Sayas Liceras",name:"Eugenio",gender:"male"},
+// {id:16416,pids:[null],mid:16115,fid:16014,apellidos:"3 Sayas Liceras",name:"Miguel",gender:"male"},
+// {id:16516,pids:[null],mid:16115,fid:16014,apellidos:"4 Sayas Liceras",name:"Samuel",gender:"male"},
 
 {id:2717,pids:[2817],mid:2616,fid:2516,apellidos:"1 Martínez Llop",name:"Carmen",gender:"female"},
 {id:2817,pids:[2717],mid:null,fid:null,apellidos:"García",name:"Carlos",gender:"male"},
@@ -1007,22 +987,22 @@ FamilyTree.templates.john_female.node = '<rect x="0" y="0" height="{h}" width="{
 {id:5517,pids:[null],mid:2616,fid:2516,apellidos:"4 Martínez Llop",name:"Joaquín",gender:"male"},
 {id:6517,pids:[6612],mid:2616,fid:2516,apellidos:"5 Martínez Llop",name:"José",gender:"male"},
 
-{id:7117,pids:[7217],mid:7018,fid:6918,apellidos:"Martínez Fabra",name:"Miguel",gender:"male"},
-{id:7217,pids:[7117],mid:null,fid:null,apellidos:"Merino",name:"Amparo",gender:"female"},
+// {id:7117,pids:[7217],mid:7018,fid:6918,apellidos:"Martínez Fabra",name:"Miguel",gender:"male"},
+// {id:7217,pids:[7117],mid:null,fid:null,apellidos:"Merino",name:"Amparo",gender:"female"},
 
-{id:7617,pids:[null],mid:7418,fid:7518,apellidos:"1 Sancho Martínez",name:"Manuel",gender:"male"},
+// {id:7617,pids:[null],mid:7418,fid:7518,apellidos:"1 Sancho Martínez",name:"Manuel",gender:"male"},
 
-{id:7717,pids:[7817],mid:7418,fid:7518,apellidos:"2 Sancho Martínez",name:"Amparo",gender:"female"},
-{id:7817,pids:[7717],mid:null,fid:null,apellidos:"Enguídanos",name:"Vicente",gender:"male"},
+// {id:7717,pids:[7817],mid:7418,fid:7518,apellidos:"2 Sancho Martínez",name:"Amparo",gender:"female"},
+// {id:7817,pids:[7717],mid:null,fid:null,apellidos:"Enguídanos",name:"Vicente",gender:"male"},
 
-{id:8217,pids:[8317],mid:7418,fid:7518,apellidos:"3 Sancho Martínez",name:"Filo",gender:"female"},
-{id:8317,pids:[8217],mid:null,fid:null,apellidos:"Eres",name:"Arcadio",gender:"male"},
+// {id:8217,pids:[8317],mid:7418,fid:7518,apellidos:"3 Sancho Martínez",name:"Filo",gender:"female"},
+// {id:8317,pids:[8217],mid:null,fid:null,apellidos:"Eres",name:"Arcadio",gender:"male"},
 
-{id:8417,pids:[8517],mid:7418,fid:7518,apellidos:"4 Sancho Martínez",name:"José Manuel",gender:"male"},
-{id:8517,pids:[8417],mid:null,fid:null,apellidos:"Vascart",name:"Nicole",gender:"female"},
+// {id:8417,pids:[8517],mid:7418,fid:7518,apellidos:"4 Sancho Martínez",name:"José Manuel",gender:"male"},
+// {id:8517,pids:[8417],mid:null,fid:null,apellidos:"Vascart",name:"Nicole",gender:"female"},
 
-{id:8917,pids:[9017],mid:7418,fid:7518,apellidos:"5 Sancho Martínez",name:"Encarnita",gender:"female"},
-{id:9017,pids:[8917],mid:null,fid:null,apellidos:"Ferreras Pérez",name:"Arturo",gender:"male"},
+// {id:8917,pids:[9017],mid:7418,fid:7518,apellidos:"5 Sancho Martínez",name:"Encarnita",gender:"female"},
+// {id:9017,pids:[8917],mid:null,fid:null,apellidos:"Ferreras Pérez",name:"Arturo",gender:"male"},
 
 {id:2918,pids:[3018],mid:2717,fid:2817,apellidos:"1 García Martínez",name:"Carmen",gender:"female"},
 {id:3018,pids:[2918],mid:null,fid:null,apellidos:"no lo se",gender:"male"},
@@ -1038,10 +1018,10 @@ FamilyTree.templates.john_female.node = '<rect x="0" y="0" height="{h}" width="{
 {id:5518,pids:[5618],mid:4717,fid:4817,apellidos:"2 Beut Martínez",name:"Amparo",gender:"female"},
 {id:5618,pids:[5518],mid:null,fid:null,apellidos:"Perales Tamarit",name:"Juan",gender:"male"},
 {id:6818,pids:[6707],mid:6612,fid:6517,apellidos:"1 Martínez Martínez",name:"Isabel",gender:"female"},
-{id:6918,pids:[7018],mid:6612,fid:6517,apellidos:"2 Martínez Martínez",name:"José Maria",gender:"male"},
-{id:7018,pids:[6918],mid:null,fid:null,apellidos:"Fabra Gorgues",name:"Carmen",gender:"female"},
+// {id:6918,pids:[7018],mid:6612,fid:6517,apellidos:"2 Martínez Martínez",name:"José Maria",gender:"male"},
+// {id:7018,pids:[6918],mid:null,fid:null,apellidos:"Fabra Gorgues",name:"Carmen",gender:"female"},
 {id:7418,pids:[7518],mid:6612,fid:6517,apellidos:"3 Martínez Martínes",name:"Amparo",gender:"female"},
-{id:7518,pids:[7418],mid:null,fid:null,apellidos:"Sancho Vallés",name:"Manuel" ,gender:"male"},
+// {id:7518,pids:[7418],mid:null,fid:null,apellidos:"Sancho Vallés",name:"Manuel" ,gender:"male"},
 {id:9318,pids:[9418],mid:6612,fid:6517,apellidos:"4 Martínez Martínez",name:"Salvador",gender:"male"},
 {id:9418,pids:[9318],mid:null,fid:null,apellidos:"Checa Cortés",name:"Elisa",gender:"female"},
 
@@ -1068,12 +1048,12 @@ FamilyTree.templates.john_female.node = '<rect x="0" y="0" height="{h}" width="{
 {id:5819,pids:[5719],mid:null,fid:null,apellidos:"Gonzáles Iranzo",name:"Soledad",gender:"female"},
 {id:6319,pids:[6419],mid:5518,fid:5618,apellidos:"2 Perales Beut",name:"José Luis",gender:"male"},
 {id:6419,pids:[6319],mid:null,fid:null,apellidos:"Vayá",name:"Pepita",gender:"female"},
-{id:9519,pids:[9619],mid:9418,fid:9318,apellidos:"1 Martínez Checa",name:"Salvador",gender:"male"},
-{id:9619,pids:[9519],mid:null,fid:null,apellidos:"Tarín",name:"María",gender:"female"},
-{id:10319,pids:[10419],mid:9418,fid:9318,apellidos:"2 Martínez Checa",name:"Elisita",gender:"female"},
-{id:10419,pids:[10319],mid:null,fid:null,apellidos:"Estellés",name:"Lamberto",gender:"male"},
-{id:10819,pids:[10919],mid:9418,fid:9318,apellidos:"3 Martinez Checa",name:"José",gender:"male"},
-{id:10919,pids:[10819],mid:null,fid:null,apellidos:"Gómez Quiles",name:"Marisa",gender:"female"},
+// {id:9519,pids:[9619],mid:9418,fid:9318,apellidos:"1 Martínez Checa",name:"Salvador",gender:"male"},
+// {id:9619,pids:[9519],mid:null,fid:null,apellidos:"Tarín",name:"María",gender:"female"},
+// {id:10319,pids:[10419],mid:9418,fid:9318,apellidos:"2 Martínez Checa",name:"Elisita",gender:"female"},
+// {id:10419,pids:[10319],mid:null,fid:null,apellidos:"Estellés",name:"Lamberto",gender:"male"},
+// {id:10819,pids:[10919],mid:9418,fid:9318,apellidos:"3 Martinez Checa",name:"José",gender:"male"},
+// {id:10919,pids:[10819],mid:null,fid:null,apellidos:"Gómez Quiles",name:"Marisa",gender:"female"},
 {id:3420,pids:[null],mid:3319,fid:3219,apellidos:"1 Carmen",gender:"female"},
 {id:3520,pids:[null],mid:3319,fid:3219,apellidos:"2 Victoria",gender:"female"},
 {id:5320,pids:[5420],mid:5219,fid:5119,apellidos:"1 Beut Muñoz",name:"Ana",gender:"female"},
@@ -1119,10 +1099,10 @@ FamilyTree.templates.john_female.node = '<rect x="0" y="0" height="{h}" width="{
 {id:10824,pids:[10924],mid:9623,fid:9722,apellidos:"3 Urios Tárraga",name:"Quique",gender:"male"},
 {id:10924,pids:[10824],mid:null,fid:null,apellidos:"",name:"Silvia",gender:"female"},
 {id:11424,pids:[11524],mid:9623,fid:9722,apellidos:"4 Urios Tárraga",name:"Juan",gender:"male"},
-{id:11524,pids:[11424],mid:null,fid:null,apellidos:"Cristina",gender:"female"},
+// {id:11524,pids:[11424],mid:null,fid:null,apellidos:"Cristina",gender:"female"},
 
-{id:8225,pids:[null],mid:8024,fid:8124,apellidos:"Alejandro",gender:"male"},
-{id:8325,pids:[null],mid:8024,fid:8124,name:"Andrea",gender:"female"},
+// {id:8225,pids:[null],mid:8024,fid:8124,apellidos:"Alejandro",gender:"male"},
+// {id:8325,pids:[null],mid:8024,fid:8124,apellidos:"Andrea"},
 {id:10025,pids:[null],mid:9824,fid:9924,apellidos:"1 XXXX Urios",name:"Juan Francisco",gender:"male"},
 {id:10125,pids:[null],mid:9824,fid:9924,apellidos:"2 XXXX Urios",name:"Ana Isabel",gender:"female"},
 {id:10525,pids:[null],mid:10324,fid:10424,apellidos:"1 XXXX Urios",name:"Martín",gender:"male"},
@@ -1164,19 +1144,19 @@ FamilyTree.templates.john_female.node = '<rect x="0" y="0" height="{h}" width="{
 {id:11230,pids:[null],mid:10929,fid:10829,apellidos:"3",name:"Susana",gender:"female"},
 
 {id:10433,pids:[10533],mid:10329,fid:10230,apellidos:"1 Gutiérrez Beltrán",name:"Rafael",gender:"male"},
-{id:10533,pids:[10433],mid:null,fid:null,apellidos:"no lo se",gender:"female"},
+// {id:10533,pids:[10433],mid:null,fid:null,apellidos:"no lo se",gender:"female"},
 
 {id:10633,pids:[null],mid:10329,fid:10230,apellidos:"2 Gutiérrez Beltrán",name:"Francisco",gender:"male"},
-{id:11033,pids:[10934],mid:null,fid:null,apellidos:"3 Gutiérrez Beltrán",name:"Asun",gender:"female",birthDate:"1948"},
+// {id:11033,pids:[10934],mid:null,fid:null,apellidos:"3 Gutiérrez Beltrán",name:"Asun",gender:"female",birthDate:"1948"},
 
-{id:11133,pids:[11233],mid:10329,fid:10230,apellidos:"4 Gutiérrez Beltrán",name:"Consuelo",gender:"female"},
-{id:11233,pids:[11133],mid:null,fid:null,apellidos:"no lo se",gender:"male"},
+// {id:11133,pids:[11233],mid:10329,fid:10230,apellidos:"4 Gutiérrez Beltrán",name:"Consuelo",gender:"female"},
+// {id:11233,pids:[11133],mid:null,fid:null,apellidos:"no lo se",gender:"male"},
 
-{id:11633,pids:[11733],mid:10329,fid:10230,apellidos:"5 Gutiérrez Beltán",name:"MªVictoria",gender:"female"},
-{id:11733,pids:[11633],mid:null,fid:null,apellidos:"no lo se",gender:"male"},
+// {id:11633,pids:[11733],mid:10329,fid:10230,apellidos:"5 Gutiérrez Beltán",name:"MªVictoria",gender:"female"},
+// {id:11733,pids:[11633],mid:null,fid:null,apellidos:"no lo se",gender:"male"},
 
-{id:12133,pids:[12233],mid:10329,fid:10230,apellidos:"6 Gutierrez Beltrán",name:"Ignacio",gender:"male"},
-{id:12233,pids:[12133],mid:null,fid:null,apellidos:"no lo se",gender:"female"},
+// {id:12133,pids:[12233],mid:10329,fid:10230,apellidos:"6 Gutierrez Beltrán",name:"Ignacio",gender:"male"},
+// {id:12233,pids:[12133],mid:null,fid:null,apellidos:"no lo se",gender:"female"},
 
 {id:13428,pids:[13528],mid:null,fid:null,apellidos:"Marín",name:"Vicente",gender:"male"},
 {id:13528,pids:[13428],mid:null,fid:null,apellidos:"Durán Botella",name:"Leonor",gender:"female"},
@@ -1365,7 +1345,7 @@ FamilyTree.templates.john_female.node = '<rect x="0" y="0" height="{h}" width="{
 {id:15233,pids:[15333],mid:13931,fid:13832,apellidos:"4 Ibáñez Esquembre",name:"José Luis",gender:"male"},
 {id:15333,pids:[15233],mid:null,fid:null,apellidos:"Galiana",name:"Maribel",gender:"female"},
 {id:17733,pids:[17634],mid:null,fid:null,apellidos:"1 Hortas",name:"Juan",gender:"male"},
-{id:17833,pids:[null],mid:null,fid:null,apellidos:"2 Hortas",name:"Paz"},//*******
+// {id:17833,pids:[null],mid:null,fid:null,apellidos:"2 Hortas",name:"Paz"},//*******
 {id:19133,pids:[19034],mid:null,fid:null,apellidos:"Sabater Piquer",name:"Lucía",gender:"female"},
 {id:19733,pids:[19634],mid:19532,fid:19432,apellidos:"1 Limiñana Sanjuán",name:"Eduardo",gender:"male" },
 {id:19833,pids:[19933],mid:19532,fid:19432,apellidos:"2 Limiñana Sanjuán",name:"Marietta",gender:"female"},
@@ -1388,7 +1368,7 @@ FamilyTree.templates.john_female.node = '<rect x="0" y="0" height="{h}" width="{
 {id:2434,pids:[2534],mid:1733,fid:1633,apellidos:"4 Aliaga Tomás",name:"Amparo",gender:"female"},
 {id:2534,pids:[2434],mid:null,fid:null,apellidos:"Jiménez Leon",name:"Pedro",gender:"male"},
 {id:2934,pids:[3034],mid:1733,fid:1633,apellidos:"5 Aliaga Tomás",name:"Rafael",gender:"male"},
-{id:3034,pids:[2934],mid:null,fid:null,apellidos:"Sanches",gender:"female"},
+{id:3034,pids:[2934],mid:null,fid:null,apellidos:"Sanches"},
 {id:3334,pids:[3434],mid:1733,fid:1633,apellidos:"6 Aliaga Tomás",name:"Vicente",gender:"male"},
 {id:3434,pids:[3334],mid:null,fid:null,apellidos:"Gómez Roca",name:"Laudeta",gender:"female"},
 {id:4134,pids:[4234],mid:4033,fid:3933,apellidos:"1 Aliaga Estellés",name:"Pedro",gender:"male",birthDate:"1956"},
@@ -1400,8 +1380,8 @@ FamilyTree.templates.john_female.node = '<rect x="0" y="0" height="{h}" width="{
 {id:6634,pids:[6734],mid:4033,fid:3933,apellidos:"5 Aliaga Estellés",name:"José Ignacio",gender:"male",birthDate:"1966"},
 {id:6734,pids:[6634],mid:null,fid:null,apellidos:"Sirvent",name:"Amparo",gender:"female"},
 {id:7434,pids:[7535,7533],mid:6922,fid:7033,apellidos:"1. Aliaga Urios",name:"Alberto",gender:"male",birthDate:"1943"},
-{id:7533,pids:[7434],mid:null,fid:null,apellidos:"Beltrán García",name:"Elena",gender:"female"},
-{id:7632,pids:[null],mid:7533,pids:7434,apellidos:"Girbes Beltrán",name:"Helena",gender:"female"},
+// {id:7533,pids:[7434],mid:null,fid:null,apellidos:"Beltrán García",name:"Elena",gender:"female"},
+// {id:7632,pids:[null],mid:7533,pids:7434,apellidos:"Girbes Beltrán",name:"Helena",gender:"female"},
 {id:8634,pids:[null],mid:6922,fid:7033,apellidos:"2 Aliaga Urios",name:"Rafaelín",gender:"male",birthDate:"1944"},
 {id:9134,pids:[9230],mid:6922,fid:7033,apellidos:"3 Aliaga Urios",name:"Maribel",gender:"female",birthDate:"1946"},
 {id:10934,pids:[11033],mid:6922,fid:7033,apellidos:"4 Aliaga Urios",name:"Pepe",gender:"male",birthDate:"1947"},
@@ -1432,7 +1412,7 @@ FamilyTree.templates.john_female.node = '<rect x="0" y="0" height="{h}" width="{
 {id:4535,pids:[null],mid:4234,fid:4134,apellidos:"3 Aliaga Ferrer",name:"Pepa",gender:"female"},
 {id:4935,pids:[5035],mid:4736,fid:4836,apellidos:"1 Andres Hernandez",name:"Ana Mª",gender:"female",birthDate:"1957"},
 {id:5035,pids:[4935],mid:null,fid:null,apellidos:"Checa Torres",name:"Pedro",gender:"male",birthDate:"1955"},
-{id:5435,pids:[5334],mid:4736,fid:4836,apellidos:"2 Andrés Hernández",name:"Trini",birthDate:"1962",gender:"female"},
+{id:5435,pids:[5334],mid:4736,fid:4836,apellidos:"2 Andrés Hernández",name:"Trini",birthDate:"1962"},
 {id:5835,pids:[5935],mid:4736,fid:4836,apellidos:"3 Andrés Hernández",name:"Vicente",gender:"female",birthDate:"1962"},
 {id:5935,pids:[5835],mid:null,fid:null,apellidos:"Hernández Marcos",name:"Isabel",gender:"female",gender:"female"},
 {id:6335,pids:[null],mid:6234,fid:6134,apellidos:"1 Aliaga Queralt",name:"Elena",gender:"female"},
@@ -1445,7 +1425,7 @@ FamilyTree.templates.john_female.node = '<rect x="0" y="0" height="{h}" width="{
 {id:9335,pids:[9436],mid:9134,fid:9230,apellidos:"1 Ballester Aliaga",name:"Mabela",gender:"female",birthDate:"1974"},
 {id:9735,pids:[9835],mid:9134,fid:9230,apellidos:"2 Ballester Aliaga",name:"Eduardo",gender:"male",birthDate:"1976"},
 {id:9835,pids:[9735],mid:null,fid:null,apellidos:"Sanjaime Marqués",name:"Alicia",gender:"female"},
-{id:10135,pids:[10235],mid:null,fid:null,apellidos:"novia",name:"novia",gender:"female"},
+// {id:10135,pids:[10235],mid:null,fid:null,apellidos:"novia",name:"novia",gender:"female"},
 {id:10235,pids:[10135],mid:9134,fid:9230,apellidos:"3 Ballester Aliaga",name:"Nacho",gender:"male",birthDate:"1978"},
 {id:11135,pids:[11235],mid:11033,fid:10934,apellidos:"1 Aliaga Gutérrez",name:"Pablo",gender:"male",birthDate:"1976"},
 {id:11235,pids:[11135],mid:null,fid:null,apellidos:"Pruñonosa Vicent",name:"Belen",gender:"female",birthDate:"1976"},
@@ -1455,7 +1435,7 @@ FamilyTree.templates.john_female.node = '<rect x="0" y="0" height="{h}" width="{
 {id:12935,pids:[13035],mid:12734,fid:12833,apellidos:"1 Montañana Aliaga",name:"José Miguel",gender: 'male',birthDate:"14-3-1974",photo: 'img/jose.png'},
 {id:13035,pids:[12935],mid:null,fid:null,apellidos:" Wu",name:"Xiao-Li",gender:"female",birthDate:"7-9-1984"},
 {id:13235,pids:[13335],mid:12734,fid:12833,apellidos:"2 Montañana Aliaga",name:"Raul",gender: 'male',birthDate:"1976-09-17",photo: 'img/raul.png'},
-{id:13335,pids:[13235],mid:null,fid:null,apellidos:"Castillo",name:"Lourdes",gender:"female"},
+// {id:13335,pids:[13235],mid:null,fid:null,apellidos:"Castillo",name:"Lourdes",gender:"female"},
 {id:13535,pids:[null],mid:12734,fid:12833,apellidos:"3 Montañana Aliaga",name:"Carolina",gender: 'female',birthDate:"1979-02-10",photo: 'img/carol.png'},
 {id:13835,pids:[13936],mid:12734,fid:12833,apellidos:"4 Montañana Aliaga",name:"Mery",gender: 'female',birthDate:"1979-02-10",photo: 'img/mery.png'},
 {id:14235,pids:[14339],mid:14034,fid:14133,apellidos:"1 Ibáñez Aliaga",name:"Arancha",gender:"female",birthDate:"1974"},
@@ -1530,15 +1510,15 @@ FamilyTree.templates.john_female.node = '<rect x="0" y="0" height="{h}" width="{
 {id:8238,pids:[8138],mid:null,fid:null,apellidos:"Aguado",name:"Felicidad",gender:"female"},
 {id:15638,pids:[15535],mid:15439,fid:15339,apellidos:"López Cañada",name:"Gema",gender:"female"},
 {id:15739,pids:[null],mid:15638,fid:15535,apellidos:"1 Ibáñez López",name:"Carlos III",gender:"male",birthDate:"2004"},
-{id:15839,pids:[null],mid:15638,fid:15535,apellidos:"2 Ibáñez López",name:"Esther",gender:"female",birthDate:"2008"},
+// {id:15839,pids:[null],mid:15638,fid:15535,apellidos:"2 Ibáñez López",name:"Esther",gender:"female",birthDate:"2008"},
 
-{id:13639,pids:[13739],mid:13540,fid:13440,apellidos:"1 Tamarit Cortina",name:"Esther",gender:"female"},
-{id:13739,pids:[13639],mid:null,fid:null,apellidos:".",name:"Juan Luis",gender:"male"},
-{id:14339,pids:[14235],mid:13540,fid:13440 ,apellidos:"2 Tamarit Cortina",name:"Vicente",gender:"male" },
-{id:14739,pids:[14839],mid:13540,fid:13440 ,apellidos:"3 Tamarit Cortina",name:"Nacho",gender:"male"},
-{id:14839,pids:[14739],mid:null,fid:null,apellidos:"Reyes",name:".",gender:"female"},
-{id:15339,pids:[15439],mid:null,fid:null,apellidos:"López",name:"Francisco",gender:"male"},
-{id:15439,pids:[15339],mid:null,fid:null,apellidos:"Cañadas",name:"Carmen",gender:"female"},
+// {id:13639,pids:[13739],mid:13540,fid:13440,apellidos:"1 Tamarit Cortina",name:"Esther",gender:"female"},
+// {id:13739,pids:[13639],mid:null,fid:null,apellidos:".",name:"Juan Luis",gender:"male"},
+// {id:14339,pids:[14235],mid:13540,fid:13440 ,apellidos:"2 Tamarit Cortina",name:"Vicente",gender:"male" },
+// {id:14739,pids:[14839],mid:13540,fid:13440 ,apellidos:"3 Tamarit Cortina",name:"Nacho",gender:"male"},
+// {id:14839,pids:[14739],mid:null,fid:null,apellidos:"Reyes",name:".",gender:"female"},
+// {id:15339,pids:[15439],mid:null,fid:null,apellidos:"López",name:"Francisco",gender:"male"},
+// {id:15439,pids:[15339],mid:null,fid:null,apellidos:"Cañadas",name:"Carmen",gender:"female"},
 
 {id:13440,pids:[13540],mid:null,fid:null,apellidos:" Tamarit",name:"Vicente",gender:"male"},
 {id:13540,pids:[13440],mid:null,fid:null,apellidos:" Cortina",name:"Amparo",gender:"female"},
